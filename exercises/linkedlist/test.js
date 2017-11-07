@@ -60,7 +60,7 @@ describe('GetLast', () => {
   });
 });
 
-describe.skip('Clear', () => {
+describe('Clear', () => {
   test('empties out the list', () => {
     const l = new List();
     expect(l.size()).toEqual(0);
