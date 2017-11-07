@@ -8,6 +8,14 @@ class Node {
   }
 }
 
-class LinkedList {}
+class LinkedList {
+  constructor() {
+    this.head = null;
+  }
+}
+
+const node = new Node(10);
+const list = new LinkedList();
+list.head = node;
 
 module.exports = { Node, LinkedList };
