@@ -1,0 +1,48 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" ></link>
+  <style>
+    pre, code {
+      white-space: pre-line;
+      min-width: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <td>Step</td>
+          <td>Name</td>
+          <td>Directions</td>
+          <td>Example</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Create the Node class</td>
+          <td>
+            Create a class to represent a node.  The node should
+            have two properties, 'data' and 'next'.  Accept both
+            of these as arguments to the 'Node' constructor, then
+            assign them to the instance.
+          </td>
+          <td>
+            <pre>
+              const n = new Node('There');
+              n.data // 'Hi'
+              n.next // null
+              const n2 = new Node('Hi', n);
+              n.next // returns n
+            </pre>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Create the LinkedList class</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
