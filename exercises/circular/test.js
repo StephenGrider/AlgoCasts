@@ -3,7 +3,7 @@ const L = require('./linkedlist');
 const List = L.LinkedList;
 const Node = L.Node;
 
-test('circular', () => {
+test('circular function is defined', () => {
   expect(typeof circular).toEqual('function');
 });
 
