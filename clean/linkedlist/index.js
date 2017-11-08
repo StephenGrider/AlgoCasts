@@ -1,6 +1,6 @@
 // --- Directions
 // Implement classes Node and Linked Lists
-// See separate directions document
+// See 'directions' document
 
 class Node {}
 
