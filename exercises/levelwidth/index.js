@@ -11,8 +11,6 @@
 // 4       5
 // Answer: [1, 3, 2]
 
-const Node = require('./node');
-
 function levelWidth(root) {}
 
 module.exports = levelWidth;
