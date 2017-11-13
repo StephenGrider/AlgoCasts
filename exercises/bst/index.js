@@ -10,6 +10,7 @@
 // 3) Implement the 'contains' method for the Node
 // class.  Contains should accept a 'data' argument
 // and return the Node in the tree with the same value.
+// If the value isn't in the tree return null.
 
 class Node {
   constructor(data) {
@@ -28,6 +29,20 @@ class Node {
     } else if (data > this.data) {
       this.right = new Node(data);
     }
+  }
+
+  contains(data) {
+    if (this.data === data) {
+      return this;
+    }
+
+    if (this.data < data && this.right) {
+      return this.right.contains(data);
+    } else if (this.data > data && this.left) {
+      return this.left.contains(data);
+    }
+
+    return null;
   }
 }
 
