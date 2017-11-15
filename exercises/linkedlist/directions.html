@@ -21,7 +21,7 @@
     </thead>
     <tbody>
       <tr>
-        <td>constructor</td>
+        <td>Node.constructor</td>
         <td>(Data, Node)</td>
         <td>Node</td>
         <td>
@@ -34,10 +34,10 @@
         </td>
         <td>
           <pre>
-            const n = new Node('Hi');
+            const n = new Node('There');
             n.data // 'Hi'
             n.next // null
-            const n2 = new Node('There', n);
+            const n2 = new Node('Hi', n);
             n.next // returns n
           </pre>
         </td>
@@ -324,8 +324,7 @@
           -
         </td>
         <td>
-          Calls the provided function with every node of the chain and the index
-          of the node.
+          Calls the provided function with every node of the chain
         </td>
         <td>
           <pre>
@@ -336,7 +335,7 @@
             list.insertLast(3);
             list.insertLast(4);
 
-            list.forEach((node, index) => {
+            list.forEach(node => {
               node.data += 10;
             });
             list.getAt(0); // Returns node with data '11'
