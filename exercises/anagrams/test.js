@@ -24,6 +24,10 @@ test('"one one" is an anagram of "One oNE"', () => {
   expect(anagrams('one one', 'One oNE')).toBeTruthy();
 });
 
+test('"one! one!!" is an anagram of "One oNE !!!!!"', () => {
+  expect(anagrams('one! one!!', 'One oNE !!!!!')).toBeTruthy();
+});
+
 test('"A tree, a life, a bench" is not an anagram of "A tree, a fence, a yard"', () => {
   expect(
     anagrams('A tree, a life, a bench', 'A tree, a fence, a yard')
