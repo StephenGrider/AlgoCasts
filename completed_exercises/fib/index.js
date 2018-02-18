@@ -8,6 +8,29 @@
 // Example:
 //   fib(4) === 3
 
+
+//fast running time
+
+function fib(c){
+  var next;
+  var a =0;
+  var b=1;
+  var start=1;
+  fibstart()
+  function fibstart(){
+        next =a;
+        a =b;
+        b +=next;
+    if(start<=c){
+       start +=1;
+         return fibstart()
+    }
+  }
+ return next;
+}
+
+
+
 // new approach
 
 function fib(n){
