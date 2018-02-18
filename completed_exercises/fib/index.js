@@ -11,7 +11,7 @@
 
 //fast running time
 
-function fib(c){
+function fib(n){
   var next;
   var a =0;
   var b=1;
@@ -21,7 +21,7 @@ function fib(c){
         next =a;
         a =b;
         b +=next;
-    if(start<=c){
+    if(start<=n){
        start +=1;
          return fibstart()
     }
