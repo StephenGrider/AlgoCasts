@@ -61,22 +61,20 @@ class LinkedList {
   }
 
   removeLast() {
-    if (!this.head) {
-      return;
-    }
-
-    if (!this.head.next) {
-      this.head = null;
-      return;
-    }
-
-    let previous = this.head;
-    let node = this.head.next;
-    while (node.next) {
-      previous = node;
-      node = node.next;
-    }
-    previous.next = null;
+    
+      var node=this.head;
+    
+      while(node){
+        if(!node.next){
+            this.head = null
+            return
+          }
+         if(!node.next.next){
+             node.next = null
+            return
+         }
+        node = node.next
+      } 
   }
 
   insertLast(data) {

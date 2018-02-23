@@ -17,19 +17,28 @@
 //       '### '
 //       '####'
 
-function steps(n, row = 0, stair = '') {
-  if (n === row) {
-    return;
+function steps(num){
+    var n = num+1;
+    var s="";
+    
+   while(n){
+     
+      s +='#';
+      n -=1;
+     
+    while(s.length <num){
+      s += ' ';
+   }
+     
+     if(s.length === num){
+         console.log(s)
+         s=s.replace(/\s/g,"")
+      }
+     
+    }
   }
 
-  if (n === stair.length) {
-    console.log(stair);
-    return steps(n, row + 1);
-  }
 
-  const add = stair.length <= row ? '#' : ' ';
-  steps(n, row, stair + add);
-}
 
 module.exports = steps;
 
