@@ -10,7 +10,6 @@
 function reverse(str) {
 	let newStr = ''
 	for (let char of str) {
-		debugger
 		newStr = char + newStr
 	}
 	return newStr;
