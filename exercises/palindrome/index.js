@@ -7,8 +7,60 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
+
+
+// ==========================================================
 function palindrome(str) {
-	return str.split('').reverse().join(',') == str.split('').join(',')
+	return str.split('').every((char, i) => {
+		return char === str[str.length - i - 1]
+	})
 }
+
+
+
+
+// ==========================================================
+// function palindrome(str) {
+// 	for (i = 0; i < str.length / 2; i++) {
+// 		if (str[i] != str[str.length - (1 + i)]) {
+// 			return false
+// 		} else {
+// 			return true
+// 		}
+// 	}
+// }
+// Test Suites: 1 passed, 1 total
+// Tests:       8 passed, 8 total
+// Snapshots:   0 total
+// Time:        0.645s, estimated 1s
+// Ran all test suites matching /palindrome/i.
+
+// ==========================================================
+// function palindrome(str) {
+// 	for (i = 0; i < str.length; i++) {
+// 		if (str[i] != str[str.length - (1 + i)]) {
+// 			return false
+// 		} else {
+// 			return true
+// 		}
+// 	}
+// }
+// Test Suites: 1 passed, 1 total
+// Tests:       8 passed, 8 total
+// Snapshots:   0 total
+// Time:        0.646s, estimated 1s
+// Ran all test suites matching /palindrome/i.
+
+// ==========================================================
+// function palindrome(str) {
+// 	// return str.split('').reverse().join(',') === str.split('').join(',')
+// 	return str.split('').reverse().join('') === str
+// }
+// Test Suites: 1 passed, 1 total
+// Tests:       8 passed, 8 total
+// Snapshots:   0 total
+// Time:        0.655s, estimated 1s
+// Ran all test suites matching /palindrome/i.
+// ==========================================================
 
 module.exports = palindrome;
