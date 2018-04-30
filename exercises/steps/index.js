@@ -18,9 +18,8 @@
 //       '####'
 
 function steps(n) {
-	let space = ' '.repeat(n)
-	for (i = 0; i < n; i++) {
-		console.log('#'.repeat(i) + space)
+	for (i = 1, s = n - 1; i <= n; i++ , s--) {
+		console.log('#'.repeat(i) + ' '.repeat(s))
 	}
 }
 
