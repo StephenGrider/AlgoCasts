@@ -22,8 +22,44 @@
 //    q.remove() // 2
 //    q.remove() // 'There'
 
-const Queue = require('./queue');
+// const Queue = require('./queue');
 
-function weave(sourceOne, sourceTwo) {}
+class Queue {
+	constructor() {
+		this.data = [];
+	}
+	add(record) {
+		this.data.unshift(record);
+	}
+	remove() {
+		return this.data.pop();
+	}
+	peek() {
+		return this.data[this.data.length - 1]
+	}
+}
+
+function weave(q1, q2) {
+	const q = new Queue()
+	while (q1.peek() || q2.peek()) {
+		if (q1.peek()) {
+			q.add(q1.remove())
+		}
+		if (q2.peek()) {
+			q.add(q2.remove())
+		}
+	}
+	console.log('q: ', q)
+	return q
+}
+
+
+// let asdf = new Queue()
+// asdf.data = ['a', 'b', 'c', 'd', 'e']
+
+// let zxcv = new Queue([1, 2, 3, 4, 5])
+// zxcv.data = [1, 2, 3, 4, 5]
+
+// weave(asdf.data, zxcv.data)
 
 module.exports = weave;
