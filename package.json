@@ -16,7 +16,8 @@
     "url": "https://github.com/ryanscottjohnson/AlgoCasts/issues"
   },
   "homepage": "https://github.com/ryanscottjohnson/AlgoCasts#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "jest": "^23.5.0"
   }
 }
