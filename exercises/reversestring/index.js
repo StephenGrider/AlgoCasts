@@ -8,14 +8,21 @@
 
 // Solution 1
 // See MDN Array.prototype.reverse() documentation
+// function reverse(str) {
+//   const arr = str.split('');
+//   arr.reverse();
+//   return arr.join('');
+// }
+// module.exports = reverse;
+
+// clean version 1
 function reverse(str) {
-  const arr = str.split('');
-  arr.reverse();
-  return arr.join('');
+  return str
+    .split('')
+    .reverse()
+    .join('');
 }
-
 module.exports = reverse;
-
 
 // Solution 2
 // function reverse(str) {}
