@@ -6,7 +6,7 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
-// Solution 1 with reverse helper
+// Solution 1 (with reverse helper)
 // See MDN Array.prototype.reverse() documentation
 // function reverse(str) {
 //   const arr = str.split('');
@@ -15,7 +15,7 @@
 // }
 // module.exports = reverse;
 
-// clean version 1
+// Solution 1 (clean)
 // function reverse(str) {
 //   return str
 //     .split('')
@@ -24,12 +24,20 @@
 // }
 // module.exports = reverse;
 
-// Solution 2 with for of char
+// Solution 2 (with for of char)
+// function reverse(str) {
+//   let reversed = '';
+//   for (let character of str) {
+//     reversed = character + reversed;
+//   }
+//   return reversed;
+// }
+// module.exports = reverse;
+
+// Solution 3 () 
 function reverse(str) {
-  let reversed = '';
-  for (let character of str) {
-    reversed = character + reversed;
-  }
-  return reversed;
+  return str.split('').reduce((reversed, character) => {
+    return character + reversed;
+  }, '');
 }
 module.exports = reverse;
