@@ -14,9 +14,13 @@
 //   return str === reversed; // if str === reversed it will return true
 // }
 
-// Solution 2
+// Solution 2 (every array helper)
 function palindrome(str) {
-  
+  // turn str into array with 'every helper'
+  return str.split('').every((character, index) => {
+    // check each character in str against opposit in array with -1
+    return character === str[str.length - index -1]; 
+  });
 }
 
 module.exports = palindrome;
