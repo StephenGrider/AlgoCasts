@@ -35,6 +35,7 @@
 // while index is less than array.length
 //   push a slice of length size from array intop 'chunked'
 //   add 'size' to 'index'
+
 function chunk(array, size) {
   const chunked = [];
   let index = 0;
@@ -43,7 +44,6 @@ function chunk(array, size) {
     chunked.push(array.slice(index, index + size));
     index += size;
   }
-
   return chunked;
 }
 
