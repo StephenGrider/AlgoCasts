@@ -40,4 +40,15 @@ function buildCharMap (str) {
   return charMap;
 }
 
+// Solution 2 - array sort
+function anagrams(stringA, stringB) {
+
+}
+
+// Helper function to create clean strings
+function cleanString (str) {
+  return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
+}
+
+
 module.exports = anagrams;
