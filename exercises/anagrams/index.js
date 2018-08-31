@@ -8,6 +8,36 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {}
+// Solution 1 - character mapping with helper function
+// RegExp and toLowerCase
+// something.replace(/[^\w]/g, "").toLowerCase();
+function anagrams(stringA, stringB) {
+  // build character maps A and B
+  const aCharMap = buildCharMap(stringA);
+  const bCharMap = buildCharMap(stringB);
+
+  // compare key length of both character maps - false case #1
+  if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
+    return false;
+  } 
+  // iterate through character maps
+  for (let char in aCharMap) {
+    //check characters with in each map - false case #2
+    if (aCharMap[char] !== bCharMap[char]) {
+      return false;
+    }
+  }
+  // Lastly - if both above checks pass, assume and return true
+  return true;
+}
+// Helper Function to build character map
+function buildCharMap (str) {
+  const charMap = {};
+
+  for (let char of str.replace(/[^\w]/g, '').toLowerCase()) {
+    charMap[char] = charMap[char] + 1 || 1;
+  }
+  return charMap;
+}
 
 module.exports = anagrams;
