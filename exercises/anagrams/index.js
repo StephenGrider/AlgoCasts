@@ -42,7 +42,8 @@ function buildCharMap (str) {
 
 // Solution 2 - array sort
 function anagrams(stringA, stringB) {
-
+  // compare strings with strict equals and return T or F
+  return cleanString(stringA) === cleanString(stringB);
 }
 
 // Helper function to create clean strings
