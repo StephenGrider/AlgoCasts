@@ -63,11 +63,11 @@
 // }
 
 // *** v4 ***
-// function steps(n) {
-//     for (let i = 1; i <= n; i++) {
-//         console.log('#'.repeat(i) + ' '.repeat(n - i));
-//     }
-// }
+function steps(n) {
+    for (let i = 1; i <= n; i++) {
+        console.log('#'.repeat(i) + ' '.repeat(n - i));
+    }
+}
 
 // *** v5 *** (recursion)
 function steps(n, stair = 1) {
