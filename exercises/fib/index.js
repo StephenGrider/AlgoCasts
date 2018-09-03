@@ -10,21 +10,21 @@
 
 
 // *** V1 ***
-function fib(n) {
-    const result = [0, 1]
-    for (let i = 2; i <= n; i++) {
-        result[i] = result[i - 2] + result[i - 1];
-    }
-    return result[n]
-}
+// function fib(n) {
+//     const result = [0, 1]
+//     for (let i = 2; i <= n; i++) {
+//         result[i] = result[i - 2] + result[i - 1];
+//     }
+//     return result[n]
+// }
 
-// *** V2 ***
-function fib(n) {
-    if (n < 2) {
-        return n;
-    }
-    return fib(n - 1) + fib(n - 2)
-}
+// *** V2 *** w/recursion
+// function fib(n) {
+//     if (n < 2) {
+//         return n;
+//     }
+//     return fib(n - 1) + fib(n - 2)
+// }
 
 // using moization
 
