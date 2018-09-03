@@ -13,7 +13,7 @@
 //       '  #  '
 //       ' ### '
 //       '#####'
-
+//  *** V1 ***
 function pyramid(n, level = 1) { //3
     if (level > n) {
         return
@@ -21,10 +21,12 @@ function pyramid(n, level = 1) { //3
     console.log(' '.repeat(n - level) + '#'.repeat(2 * level - 1) + ' '.repeat(n - level))
     pyramid(n, level + 1)
 }
-// function pyramid(n) { //3
-//     for (let i = 1; i <= n; i++) {
-//         console.log(' '.repeat(n - i) + '#'.repeat(2 * i - 1) + ' '.repeat(n - i))
-//     }
-// }
+
+//  *** V2 ***
+function pyramid(n) { //3
+    for (let i = 1; i <= n; i++) {
+        console.log(' '.repeat(n - i) + '#'.repeat(2 * i - 1) + ' '.repeat(n - i))
+    }
+}
 
 module.exports = pyramid;
