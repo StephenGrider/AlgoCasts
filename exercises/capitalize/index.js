@@ -22,14 +22,17 @@ function capitalize(str) {
 
 // Solution 2
 function capitalize(str) {
-  let result = '';
-  for () {
-    if () {
-
+   // assuming the first letter needs to be capitalized
+  let result = str[0].toUpperCase();
+  
+  for (let i = 1; i < str.length; i++) {
+    if (str[i -1] === ' ') {
+      result += str[i].toUpperCase();
     } else {
-      
+      result += str[i];
     }
   }
+  return result
 }
 
 module.exports = capitalize;
