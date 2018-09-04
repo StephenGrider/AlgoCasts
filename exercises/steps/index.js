@@ -17,6 +17,9 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+// Solution 1
+function steps(n) {
+
+}
 
 module.exports = steps;
