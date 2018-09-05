@@ -26,7 +26,7 @@
 //     return fib(n - 1) + fib(n - 2)
 // }
 
-// using moization
+// using memoization
 
 function memoize(fn) {
     const cache = {};
