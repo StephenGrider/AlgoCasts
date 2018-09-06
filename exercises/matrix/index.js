@@ -19,7 +19,7 @@ function matrix(n) {
   const results = [];
 
   for (let i = 0; i < n; i++) {
-    results.push([])
+    results.push([]);
   }
 
   let counter = 1;
@@ -34,8 +34,30 @@ function matrix(n) {
       results[startRow][i] = counter;
       counter++;
     }
-    startRow;
+    startRow++;
+
+    // Right Column
+    for (let i = startRow; i <= endRow; i++) {
+      results[i][endColumn] = counter;
+      counter++;
+    }
+    endColumn--;
+
+    //Bottom Row
+    for (let i = endColumn; i >= startColumn; i--) {
+      results[endRow][i] = counter;
+      counter++;
+    }
+    endRow--;
+
+    // Start Column
+    for (let i = endRow; i >= startRow; i--) {
+      results[i][startColumn] = counter;
+      counter++;
+    }
+    startColumn++;
   }
+  return results;
 }
 
 module.exports = matrix;
