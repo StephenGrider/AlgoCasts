@@ -20,6 +20,7 @@ function reverse(str) {
     }
     return (newArr.join(''))
 }
+
 function reverse(str) {
     let reversed = '';
 
