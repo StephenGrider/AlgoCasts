@@ -5,6 +5,15 @@
   <h1>Click the button</h1>
   <button>Me!</button>
   <script>
-    
+    $('button').on('click', () => {
+        console.log('Hello')
+    })
+    $('button').on('click', () => {
+        console.log('There')
+    })
+
+    $('button').trigger('click');
+
+    $('button').off('click');
   </script>
 </body>
