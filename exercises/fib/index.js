@@ -8,6 +8,7 @@
 // Example:
 //   fib(4) === 3
 
+// Solution
 function fib(n) {}
 
 module.exports = fib;
