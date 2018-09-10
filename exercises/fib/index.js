@@ -25,11 +25,37 @@
 // Solution - Recursive
 // RunTime Complexity = 2^n (Exponential)
 // multiple identical function calls
-function fib(n) {
+// function fib(n) {
+//   if (n < 2) {
+//     return n;
+//   }
+//   return fib(n - 1) + fib(n - 2);
+// }
+
+// Solution - memoization
+function memoize(fn) {
+  const cache = {};
+
+  return function(...args) {
+    if (cache[args]) {
+      return cache[args];
+    }
+
+    const result = fn.apply(this, args);
+    cache[args] = result;
+    return result;
+  };
+}
+
+    // use previous fib function
+function slowFib(n) {
   if (n < 2) {
     return n;
   }
   return fib(n - 1) + fib(n - 2);
 }
+
+const fib =  memoize(slowFib);
+fib(5);
 
 module.exports = fib;
