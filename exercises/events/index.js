@@ -7,7 +7,7 @@ class Events {
     constructor() {
         this.events = {};
     }
-    // Register an event handler
+    // Register an event handler // this.events = { trigger : ['click', 'hover'], on: ['click', 'hover'], off: ['click'] }
     on(eventName, callback) {
         if (this.events[eventName]) {
             this.events[eventName].push(callback);
