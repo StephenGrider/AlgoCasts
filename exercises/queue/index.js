@@ -5,9 +5,25 @@
 // it is removed
 // --- Examples
 //     const q = new Queue();
+// to add - enqueuing
 //     q.add(1);
+// to remove - dequeuing
 //     q.remove(); // returns 1;
 
-class Queue {}
+// First in First out (FIFO)
+
+class Queue {
+  constructor() {
+    this.something = [];
+  }
+
+  add(record) {
+    this.something.unshift(record);
+  }
+  
+  remove() {
+    return this.something.pop();
+  }
+}
 
 module.exports = Queue;

@@ -9,7 +9,7 @@
 //   fib(4) === 3
 
 // Solution - Iterative
-RunTime Complexity = N (Linier)
+// RunTime Complexity = N (Linier)
 function fib(n) {
   const result = [0, 1];
 
@@ -23,8 +23,8 @@ function fib(n) {
 }
 
 // Solution - Recursive
-RunTime Complexity = 2^n (Exponential)
-multiple identical function calls
+// RunTime Complexity = 2^n (Exponential)
+// multiple identical function calls
 function fib(n) {
   if (n < 2) {
     return n;
