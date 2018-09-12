@@ -3,6 +3,7 @@
 // should be a class with methods 'add' and 'remove'.
 // Adding to the queue should store an element until
 // it is removed
+
 // --- Examples
 //     const q = new Queue();
 // to add - enqueuing
@@ -20,7 +21,7 @@ class Queue {
   add(record) {
     this.something.unshift(record);
   }
-  
+
   remove() {
     return this.something.pop();
   }

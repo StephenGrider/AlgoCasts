@@ -4,8 +4,10 @@
 // one to be returned) from the queue *without*
 // removing it.
 
+// helper function for Weave
 class Queue {
   constructor() {
+    // 'data' is an arbitrary place holder name
     this.data = [];
   }
 
