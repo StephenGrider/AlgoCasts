@@ -71,9 +71,12 @@ class LinkedList {
     }
   }
 
+  // disconnect the head of the linkedList
   clear() {
-    
+    this.head = null;
   }
+
+  
 }
 
 
