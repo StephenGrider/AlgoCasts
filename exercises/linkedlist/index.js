@@ -17,13 +17,40 @@ class LinkedList {
   insertFirst(data) {
     this.head = new Node(data, this.head);
   }
-}
 
-// // Mini Test for Repl.it
+  // // Mini Test for Repl.it insertFirst method
 // const nodeOne = new Node(5);
 // const list = new LinkedList();
 // list.head = nodeOne;
 // list.insertFirst(3);
 // list;
+
+  // individual solution
+  // size() {
+  //   let size = 0;
+  //   let currentNode = this.root;
+  //   while (currentNode) {
+  //     currentNode = currentNode.next;
+  //     size++;
+  //   }
+  //   return size;
+  // }
+
+  // course solution
+  size() {
+    let counter = 0;
+    let node = this.head;
+
+    while (node) {
+      counter++;
+      node = node.next;
+    }
+  }
+
+  getFirst() {
+    return this.head;
+  }
+}
+
 
 module.exports = { Node, LinkedList };
