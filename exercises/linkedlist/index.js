@@ -45,10 +45,30 @@ class LinkedList {
       counter++;
       node = node.next;
     }
+
+    return counter;
   }
 
   getFirst() {
     return this.head;
+  }
+
+  getLast() {
+    // check to see if first node is defined
+    if (!this.head) {
+      return null;
+    }
+    // define first node
+    let node = this.head;
+    // check all nodes
+    while (node) {
+      // does node point to next or null??
+      if (!node.next) {
+        return node;
+      }
+      // keep checking
+      node = node.next
+    }
   }
 }
 
