@@ -135,7 +135,7 @@ describe('RemoveLast', () => {
   });
 });
 
-describe.skip('InsertLast', () => {
+describe('InsertLast', () => {
   test('adds to the end of the list', () => {
     const l = new List();
     l.insertFirst('a');

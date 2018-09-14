@@ -103,7 +103,19 @@ class LinkedList {
     previous.next = null;
   }
 
-  
+  insertLast(data) {
+    // use getLast method from above
+    const last = this.getLast();
+    // some nodes exist
+    if (last) {
+      last.next = new Node(data)
+    // list is empty
+    } else {
+      this.head = new Node(data);
+    }
+  }
+
+
 }
 
 
