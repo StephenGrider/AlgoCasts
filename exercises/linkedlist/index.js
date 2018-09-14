@@ -78,10 +78,32 @@ class LinkedList {
 
   removeFirst() {
     if (!this.head) {
-      return
+      return;
     }
     this.head = this.head.next;
   }
+
+  removeLast() {
+    // check if list is empty
+    if (!this.head) {
+      return;
+    }
+    // check if list has only one node
+    if (!this.head.next) {
+      this.head = null;
+      return;
+    }
+    // check through each node in list
+    let previous = this.head;
+    let node = this.head.next;
+    while (node.next) {
+      previous = node;
+      node = node.next;
+    }
+    previous.next = null;
+  }
+
+  
 }
 
 
