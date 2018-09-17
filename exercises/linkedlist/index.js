@@ -161,13 +161,26 @@ class LinkedList {
     const node = new Node(data, previous.next);
     previous.next = node;
   }
-
+  // my code
   forEach(callback) {
     let current = this.head;
     while (current) {
       callback(current);
       current = current.next;
     }
+  }
+    // lecture code
+  forEach(fn) {
+    let node = this.head;
+    let counter = 0;
+    while (node) {
+       fn (node, counter);
+       node = node.next;
+       counter++
+     }
+   }
+
+   
 }
 
 
