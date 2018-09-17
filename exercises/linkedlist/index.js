@@ -169,7 +169,7 @@ class LinkedList {
       current = current.next;
     }
   }
-    // lecture code
+    // lecture code - iterator
   forEach(fn) {
     let node = this.head;
     let counter = 0;
@@ -180,7 +180,15 @@ class LinkedList {
      }
    }
 
-   
+   // generator
+   *[Symbol.iterator]() {
+     let node = this.head;
+     while (node) {
+       yield node;
+       node = node.next
+     }
+   }
+
 }
 
 
