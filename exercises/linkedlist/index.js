@@ -127,7 +127,27 @@ class LinkedList {
     }
     return null;
   }
-  
+
+  removeAt(index) {
+    // does the list have at least 1 node?
+    if (!this.head) {
+      return;
+    }
+    // reassign head to index 1
+    if (index === 0) {
+      this.head = this.head.next;
+      return;
+    }
+    // recycle getAt method from above
+    const previous = this.getAt(index - 1);
+    if (!previous || !previous.next) {
+      return;
+    }
+    // skip over current index
+    previous.next = previous.next.next;
+
+  }
+
 }
 
 
