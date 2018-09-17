@@ -140,14 +140,27 @@ class LinkedList {
     }
     // recycle getAt method from above
     const previous = this.getAt(index - 1);
+    // check if previous exits and if it points to 'undefined'
     if (!previous || !previous.next) {
       return;
     }
     // skip over current index
     previous.next = previous.next.next;
-
   }
 
+  insertAt(data, index) {
+    if (!this.head) {
+      this.head = new Node(data);
+      return;
+    }
+    if (index === 0) {
+      this.head = new Node(data, this.head)
+      return;
+    }
+    const previous = this.getAt(index - 1) || this.getLast();
+    const node = new Node(data, previous.next);
+    previous.next = node;
+  }
 }
 
 
