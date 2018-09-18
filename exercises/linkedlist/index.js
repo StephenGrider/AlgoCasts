@@ -162,13 +162,13 @@ class LinkedList {
     previous.next = node;
   }
   // my code
-  forEach(callback) {
-    let current = this.head;
-    while (current) {
-      callback(current);
-      current = current.next;
-    }
-  }
+  // forEach(callback) {
+  //   let current = this.head;
+  //   while (current) {
+  //     callback(current);
+  //     current = current.next;
+  //   }
+  // }
     // lecture code - iterator
   forEach(fn) {
     let node = this.head;
