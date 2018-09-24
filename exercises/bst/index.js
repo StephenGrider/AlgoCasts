@@ -34,6 +34,22 @@ class Node {
       this.right = new Node (data);
     }
   }
+
+  contains(data) {
+    // compare data to node
+    if (this.data === data) {
+      return this;
+    }
+    // is data < node and does node exist
+    if (this.data < data && this.right) {
+      return this.right.contains(data);
+    // is data > node and does node exist
+    } else if (this.data > data && this.left) {
+      return this.left.contains(data);
+    } 
+    // all above tests fail, return null
+    return null;
+  }
 }
 
 module.exports = Node;
