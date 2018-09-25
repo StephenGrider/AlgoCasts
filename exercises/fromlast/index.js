@@ -10,7 +10,22 @@
 //    list.insertLast('c');
 //    list.insertLast('d');
 //    fromLast(list, 2).data // 'b'
+// n - number of spaces from the right/tail
+function fromLast(list, n) {
+    let slow = list.getFirst();
+    let fast = list.getFirst();
 
-function fromLast(list, n) {}
+    while (n > 0) {
+        fast = fast.next;
+        n--;
+    }
+
+    while (fast.next) {
+        slow = slow.next;
+        fast = fast.next;
+    }
+
+    return slow;
+}
 
 module.exports = fromLast;
