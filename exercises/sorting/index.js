@@ -22,8 +22,22 @@ function bubbleSort(arr) {
 }
 
 // worst case n^2 but easier
+// 'prove me wrong' function
 function selectionSort(arr) {
-
+  for (i = 0; i < arr.length; i++) {
+    let indexOfMin = i;
+    for (let j = i +1; j < arr.length; j++) {
+      if (arr[j] < arr[indexOfMin]){
+        indexOfMin = j
+      }
+    }
+    if (indexOfMin !== i) {
+      let lesser = arr[indexOfMin];
+      arr[indexOfMin] = arr[i];
+      arr[i] = lesser;
+    }
+  }
+  return arr;
 }
 
 // worst case n*log(n) but medium
