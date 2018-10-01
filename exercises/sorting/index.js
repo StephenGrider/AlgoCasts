@@ -41,12 +41,23 @@ function selectionSort(arr) {
 }
 
 // worst case n*log(n) but medium
+// recursive solution
 function mergeSort(arr) {
 
 }
-
+// iterative function
 function merge(left, right) {
-
+  const results = [];
+  while (left.length && right.length) {
+    if (left[0] < right[0]) {
+      results.push(left.shift());
+    } else {
+      results.push(right.shift());
+    }
+  }
+  // ES6 functionality
+  // create a new array with results and remaining value from either array
+  return [...results, ...left, ...right];
 }
 
 module.exports = { bubbleSort, selectionSort, mergeSort };
