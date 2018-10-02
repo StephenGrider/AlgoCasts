@@ -43,8 +43,17 @@ function selectionSort(arr) {
 // worst case n*log(n) but medium
 // recursive solution
 function mergeSort(arr) {
+  if (arr.length === 1) {
+    return arr;
+  }
+  const center = Math.floor(arr.length / 2);
+  const left = arr.slice(0, center);
+  const right = arr.slice(center);
 
+  // recursive call
+  return merge(mergeSort(left), mergeSort(right));
 }
+
 // iterative function
 function merge(left, right) {
   const results = [];
