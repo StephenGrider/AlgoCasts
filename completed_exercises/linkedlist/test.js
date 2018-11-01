@@ -53,6 +53,7 @@ describe('GetFirst', () => {
 describe('GetLast', () => {
   test('returns the last element', () => {
     const l = new List();
+    expect(l.getLast()).toEqual(null);
     l.insertFirst(2);
     expect(l.getLast()).toEqual({ data: 2, next: null });
     l.insertFirst(1);
