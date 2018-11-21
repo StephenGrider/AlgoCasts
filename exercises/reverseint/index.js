@@ -10,16 +10,15 @@
 
 function reverseInt(n) {
   const negPosCheck = Math.sign(n);
-  let splitNum = n.toString().split('')
   switch(negPosCheck) {
     case 0:
       return 0;
       break;
     case 1: 
-      return parseInt(splitNum.reverse().join(''));
+      return parseInt(n.toString().split('').reverse().join(''));
       break;
     case -1:
-      return -(parseInt(splitNum.reverse().join('')));
+      return -(parseInt(n.toString().split('').reverse().join('')));
   }
 }
 
