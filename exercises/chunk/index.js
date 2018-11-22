@@ -11,8 +11,7 @@
 function chunk(array, size) {
   let result = [];
   for (let i = 0; i < array.length; i += size) {
-    const chunker = array.slice(i, i + size);
-    result.push(chunker);
+    result.push(array.slice(i, i + size));
   }
   return result;
 }
