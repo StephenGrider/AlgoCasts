@@ -17,6 +17,71 @@
 //       '### '
 //       '####'
 
+
+
+function steps(n, row = 0, stair = '') {
+  if(row === n) {
+    return;
+  }
+
+  if(stair.length <= row) {
+    stair += '#';
+  } else {
+    stair += ' ';
+  }
+
+  if(stair.length === n) {
+    console.log(stair)
+    return steps(n, row + 1);
+  }
+
+  steps(n, row, stair);
+}
+
+
+
+
+// function steps(n) {
+  
+//   for(let row = 0; row < n; row++) {
+//      let step = '';
+
+//      for(let column = 0; column < n; column++) {
+
+//         if (column <= row) {
+//           step += '#';
+//         } else {
+//           step += ' ';
+//         }
+//      }
+//      console.log(step);
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+module.exports = steps;
+
+
+
+
+
+
+
+
+
+
+
+
 // function steps(n) {
 //   for (let row = 0; row < n; row++) {
 //     let step = '';
@@ -32,24 +97,22 @@
 // }
 // }
 
-function steps(n, row = 0, stair = '') {
-  if (row === n) {
-    return;
-  };
+// function steps(n, row = 0, stair = '') {
+//   if (row === n) {
+//     return;
+//   };
 
-  if (stair.length <= row) {
-    stair += '#';
-  } else {
-    stair += ' ';
-  };
+//   if (stair.length <= row) {
+//     stair += '#';
+//   } else {
+//     stair += ' ';
+//   };
 
-  if (n === stair.length) {
-    console.log(stair);
-    return steps(n, row + 1);
-  };
+//   if (n === stair.length) {
+//     console.log(stair);
+//     return steps(n, row + 1);
+//   };
 
-  steps(n, row, stair);
-}
+//   steps(n, row, stair);
+// }
     
-
-module.exports = steps;
