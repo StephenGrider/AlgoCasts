@@ -17,6 +17,7 @@
 
 function matrix(n) {
   const results = [];
+
   for (let i = 0; i < n; i++) {
     results.push([]);
   }
@@ -29,32 +30,39 @@ function matrix(n) {
   let endColumn = n - 1;
 
   while(startRow <= endRow && startColumn <= endColumn) {
-    //Top Row
 
+    //top row
     for (let i = startColumn; i <= endColumn; i++) {
       results[startRow][i] = counter;
       counter++;
     }
-    startRow++
+    startRow++;
 
+    //right side
     for (let i = startRow; i <= endRow; i++) {
       results[i][endColumn] = counter;
-      counter++;
+      counter++
     }
     endColumn--;
 
+    //bottom row
     for (let i = endColumn; i >= startColumn; i--) {
       results[endRow][i] = counter;
       counter++;
     }
     endRow--;
+
+    //middle
+
     for (let i = endRow; i >= startRow; i--) {
       results[i][startColumn] = counter;
       counter++
     }
     startColumn++;
-  }
-    console.log(results);
+
+
+    console.log(results)
+    }
     return results;
 }
 
