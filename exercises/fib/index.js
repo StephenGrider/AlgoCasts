@@ -8,6 +8,8 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+function fib(n) {
+    addEventListener;o'jasdip'fjapis'dfasf
+}
 
 module.exports = fib;
