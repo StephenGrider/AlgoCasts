@@ -11,6 +11,36 @@
 //    list.insertLast('d');
 //    fromLast(list, 2).data // 'b'
 
-function fromLast(list, n) {}
+function fromLast(list, n) {
+  let slow = list.head();
+  let fast = list.head();
+
+  while (n > 0) {
+    fast = fast.next;
+    n--;
+  }
+
+  while (fast.next) {
+    slow = slow.next;
+    fast = fast.next;
+  }
+  return slow;
+}
+
+// my initial solution
+// function fromLast(n) {
+//   // step forward N times.
+//   let currentNode = this.root;
+//   let index = 0;
+//   while (currentNode) {
+//     if (index === n) {
+//       return currentNode;
+//     } else {
+//       currentNode = currentNode.next;
+//       index++;
+//     }
+//   }
+//   return currentNode;
+// }
 
 module.exports = fromLast;
