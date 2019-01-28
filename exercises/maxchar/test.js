@@ -7,6 +7,7 @@ test('maxChar function exists', () => {
 test('Finds the most frequently used char', () => {
   expect(maxChar('a')).toEqual('a');
   expect(maxChar('abcdefghijklmnaaaaa')).toEqual('a');
+  expect(maxChar('cacacbb')).toEqual('c');
 });
 
 test('Works with numbers in the string', () => {
