@@ -6,6 +6,12 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
-function reverse(str) {}
+function reverse(str) {
+  let splitStr = str.split('');
+  let reverseStr = splitStr.reverse();
+  let joinStrBack = reverseStr.join('');
+
+  return joinStrBack;
+}
 
 module.exports = reverse;
