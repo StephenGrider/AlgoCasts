@@ -6,7 +6,9 @@
 // maxChar("apple 1231111") === "1"
 
 function maxChar(str) {
-  const chars = {}
+  const chars = {};
+  let max = 0;
+  let maxChar = '';
 
   for (let char of str ) {
     if (!chars[char]) {
@@ -16,7 +18,14 @@ function maxChar(str) {
       }
   }
 
-  console.log(chars);
+  for (let char in chars) {
+    if (chars[char] > max) {
+      max = chars[char];
+      maxChar = char;
+    }
+  }
+
+  return maxChar;
 
 }
 
