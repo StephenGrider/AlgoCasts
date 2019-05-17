@@ -18,10 +18,10 @@ function anagrams(stringA, stringB) {
     .toLowerCase()
     .split("");
 
-  let makeObj = function (arr) {
+  let makeObj = function(arr) {
     let myObj = {};
     for (var i in arr) {
-      myObj[arr[i]] ? myObj[arr[i]]++ : myObj[arr[i]] = 1;
+      myObj[arr[i]] ? myObj[arr[i]]++ : (myObj[arr[i]] = 1);
     }
     return myObj;
   };
@@ -30,9 +30,18 @@ function anagrams(stringA, stringB) {
   let strObjB = makeObj(stringB);
 
   console.log(strObjA, "THIS IS STRING OBJECT A");
-  console.log(strObjB, 'THIS IS THE B STRING')
+  console.log(strObjB, "THIS IS THE B STRING");
 
-  return (stringA.length !== stringB.length && strObjA != strObjB) ? false : true;
+  if (Object.keys(strObjA).length !== Object.keys(strObjB).length) {
+    return false;
+  }
+
+  for (var i in strObjA) {
+    if (strObjA[i] !== strObjB[i]) {
+      return false;
+    }
+  }
+  return true;
 }
 
 module.exports = anagrams;
