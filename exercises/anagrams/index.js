@@ -9,39 +9,52 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
+  // stringA = stringA
+  //   .replace(/[^\w]/g, "")
+  //   .toLowerCase()
+  //   .split("");
+  // stringB = stringB
+  //   .replace(/[^\w]/g, "")
+  //   .toLowerCase()
+  //   .split("");
+
+  // let makeObj = function(arr) {
+  //   let myObj = {};
+  //   for (var i in arr) {
+  //     myObj[arr[i]] ? myObj[arr[i]]++ : (myObj[arr[i]] = 1);
+  //   }
+  //   return myObj;
+  // };
+
+  // let strObjA = makeObj(stringA);
+  // let strObjB = makeObj(stringB);
+
+  // if (Object.keys(strObjA).length !== Object.keys(strObjB).length) {
+  //   return false;
+  // }
+
+  // for (var i in strObjA) {
+  //   if (strObjA[i] !== strObjB[i]) {
+  //     return false;
+  //   }
+  // }
+  // return true;
+
+  //solution #2
   stringA = stringA
     .replace(/[^\w]/g, "")
     .toLowerCase()
-    .split("");
+    .split("")
+    .sort()
+    .join("");
   stringB = stringB
     .replace(/[^\w]/g, "")
     .toLowerCase()
-    .split("");
+    .split("")
+    .sort()
+    .join("");
 
-  let makeObj = function(arr) {
-    let myObj = {};
-    for (var i in arr) {
-      myObj[arr[i]] ? myObj[arr[i]]++ : (myObj[arr[i]] = 1);
-    }
-    return myObj;
-  };
-
-  let strObjA = makeObj(stringA);
-  let strObjB = makeObj(stringB);
-
-  console.log(strObjA, "THIS IS STRING OBJECT A");
-  console.log(strObjB, "THIS IS THE B STRING");
-
-  if (Object.keys(strObjA).length !== Object.keys(strObjB).length) {
-    return false;
-  }
-
-  for (var i in strObjA) {
-    if (strObjA[i] !== strObjB[i]) {
-      return false;
-    }
-  }
-  return true;
+  return stringA === stringB ? true : false;
 }
 
 module.exports = anagrams;
