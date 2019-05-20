@@ -36,3 +36,29 @@ function steps(n) {
 }
 
 module.exports = steps;
+
+/*
+RECURSION SOLUTION
+
+function steps(n, row = 0, stair = '') {
+    //define base case
+    if (n === row) {
+        return;
+    }
+    if (n === stair.length) {
+        console.log(stair);
+        return steps(n, row + 1);
+    }
+
+    if (stair.length <= row) {
+        stair += "#";
+    } else {
+        stair += " ";
+    }
+    return steps(n, row, stair);
+    
+}
+
+
+
+*/
