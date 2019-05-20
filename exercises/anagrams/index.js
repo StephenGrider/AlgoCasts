@@ -38,3 +38,31 @@ function anagrams(stringA, stringB) {
 }
 
 module.exports = anagrams;
+
+/*
+
+//clean up both strings
+//lowercase both strings
+//sort both strings
+//if two sorted strings are identical, we can say we have an anagram
+
+let regex = /[^\w]/g;
+function checkAnagram(str1, str2){
+    str1 = cleanString(str1);
+    str2 = cleanString(str2);
+    return str1 === str2
+
+}
+
+function cleanString(str) {
+    return str.replace(regex, '').toLowerCase().split('').sort().join('');
+}
+
+
+
+
+
+
+
+
+*/
