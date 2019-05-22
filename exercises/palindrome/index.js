@@ -10,6 +10,9 @@
 function palindrome(str) {
   var reverse = str.split('').reverse().join('');
   return str === reverse;
+
+  // The lesson had something else, the array 'every()' function
+  // Seemed too complicated compared to above
 }
 
 module.exports = palindrome;
