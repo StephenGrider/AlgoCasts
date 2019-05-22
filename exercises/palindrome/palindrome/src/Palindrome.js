@@ -13,9 +13,9 @@ class Palindrome extends Component {
     palindrome(str) {
         let reversed = str.split('').reverse('').join('');
         if ( reversed === str) {
-            this.setState({check: `${str} is a palindrome`});
+            this.setState({check: `${str} is a palindrome`, input: ''});
         } else {
-            this.setState({check: `${str} is NOT a palindrome`});
+            this.setState({check: `${str} is NOT a palindrome`, input: ''});
         }
     }
     handleChange = (event) => {
