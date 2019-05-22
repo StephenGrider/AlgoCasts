@@ -1,0 +1,13 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: teal;
+  height: 100vh;
+}
+
+.App h1 {
+  width: 50%;
+}
+
