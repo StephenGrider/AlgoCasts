@@ -18,6 +18,8 @@
 //       '####'
 
 function steps(n) {
+    //O(n^2) runtime (aka quadratic)
+
     //nested loops
     //row
     for(let i = 0; i < n; i++) {

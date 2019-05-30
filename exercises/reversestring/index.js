@@ -34,6 +34,7 @@
 
 */ 
 
+//O(n) time complexity (aka linear)
 function reverse(str) {
     const reverseArray = [];
     const split = str.split("");
