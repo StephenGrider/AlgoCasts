@@ -22,7 +22,7 @@ test('stack can follows first in, last out', () => {
   expect(s.pop()).toEqual(1);
 });
 
-test('peek returns the first element but doesnt pop it', () => {
+test('peek returns the last element but doesnt pop it', () => {
   const s = new Stack();
   s.push(1);
   s.push(2);
