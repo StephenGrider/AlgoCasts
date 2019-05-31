@@ -8,6 +8,45 @@
 //     q.add(1);
 //     q.remove(); // returns 1;
 
-class Queue {}
+class Queue {
+    constructor() {
+        this.array = [];
 
-module.exports = Queue;
+    }
+
+    add(item) {
+        this.array.unshift(item);
+    }
+
+    remove() {
+        return this.array.pop();
+    }
+}
+
+class QueueObject {
+    constructor() {
+        this.storage = {};
+        this.count = 0;
+        this.lowestCount = 0;
+    }
+
+    add(item) {
+        if(item) {
+            this.storage[this.count] = item; //assign item to this.storage[this.count]
+            this.count++;
+        }
+    }
+
+    remove() {
+        if(this.count - this.lowestCount === 0) {
+            return undefined; // means queue is empty;
+        }
+
+        let popped = this.storage[this.lowestCount]; //keep record of popped
+        delete this.storage[this.lowestCount]; //delete popped
+        this.lowestCount++; //increase lowestCount since lowestCount has been deleted
+        return popped; //return popped to use elsewhere if needed
+    }
+}
+
+module.exports = QueueObject;
