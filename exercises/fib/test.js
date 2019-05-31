@@ -4,6 +4,10 @@ test('Fib function is defined', () => {
   expect(typeof fib).toEqual('function');
 });
 
+test('calculates correct fib value for 0', () => {
+  expect(fib(0)).toEqual(0);
+});
+
 test('calculates correct fib value for 1', () => {
   expect(fib(1)).toEqual(1);
 });
