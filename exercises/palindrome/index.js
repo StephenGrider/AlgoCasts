@@ -7,6 +7,22 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+// Joe attempt
+// function palindrome(str) {
+//   return str.split("").reverse().join("") === str
+// }
+
+// Solution 1 same as Joe attempt
+
+// Alt Solution
+// not ideal, but can be good to talk about
+// uses an advanced array helper
+// once the program checks the first half of the input and the middle input
+// it does not need to be checked further, it is redundent
+function palindrome(str) {
+  return str.split("").every((char, index) => {
+    return char === str[str.length - index - 1]
+  })
+}
 
 module.exports = palindrome;
