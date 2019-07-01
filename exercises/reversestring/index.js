@@ -8,10 +8,13 @@
 
 function reverse(str) {
 
-    return str.split('').reduce((reversed, character) => {
-        return character + reversed
-    }, '')
+    let reversed = ''
 
+    for (let character of str) {
+        reversed = character + reversed
+    }
+
+    return reversed
 }
 
 module.exports = reverse;
@@ -30,3 +33,7 @@ module.exports = reverse;
 // return reversed
 ////////////////////////////////////////////////////////
 
+// third solution 
+// return str.split('').reduce((reversed, character) => {
+//     return character + reversed
+// }, '');
