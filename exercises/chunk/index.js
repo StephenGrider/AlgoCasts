@@ -12,7 +12,7 @@ function chunk(array, size) {
     let chunkyArrays = []
     let index = 0
 
-    while(array.length > 0){
+    while(index < array.length){
         chunkyArrays.push(array.slice(index, index+size))
         index = index + size
     }
