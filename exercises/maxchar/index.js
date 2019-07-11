@@ -7,28 +7,53 @@
 
 
 // Joe attempt
+// function maxChar(str) {
+//   let chars = {}
+//
+//   str.split("").forEach(char => {
+//     if (!chars[char]) {
+//       chars[char] = 1
+//     } else {
+//       chars[char] = chars[char] + 1
+//     }
+//   })
+//
+//   let highestCount = -1
+//   let mostFrequentChar = ""
+//
+//   Object.keys(chars).map((key) => {
+//     if (chars[key] > highestCount){
+//       highestCount = chars[key]
+//       mostFrequentChar = key
+//     }
+//   })
+//
+//   return mostFrequentChar
+// }
+
+// Solution
+
 function maxChar(str) {
-  let chars = {}
+  const charMap = {}
+  let max = 0
+  let maxChar = ''
 
-  str.split("").forEach(char => {
-    if (!chars[char]) {
-      chars[char] = 1
+  for (let char of str) {
+    if (charMap[char]) {
+      charMap[char]++
     } else {
-      chars[char] = chars[char] + 1
+      charMap[char] = 1
     }
-  })
+  }
 
-  let highestCount = -1
-  let mostFrequentChar = ""
-
-  Object.keys(chars).map((key) => {
-    if (chars[key] > highestCount){
-      highestCount = chars[key]
-      mostFrequentChar = key
+  for (let char in charMap) {
+    if (charMap[char] > max) {
+      max = charMap[char]
+      maxChar = char
     }
-  })
+  }
 
-  return mostFrequentChar
+  return maxChar
 }
 
 module.exports = maxChar;
