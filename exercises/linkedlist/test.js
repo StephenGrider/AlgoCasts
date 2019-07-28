@@ -136,6 +136,13 @@ describe.skip('RemoveLast', () => {
 });
 
 describe.skip('InsertLast', () => {
+  test('adds to the end of the list when list is empty', () => {
+    const l = new List();
+    expect(() => {
+      l.insertLast('a');
+    }).not.toThrow();
+  });
+  
   test('adds to the end of the list', () => {
     const l = new List();
     l.insertFirst('a');
