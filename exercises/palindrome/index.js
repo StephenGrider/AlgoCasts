@@ -9,24 +9,19 @@
 
 function palindrome(str) {
 
-    return str.split("").every((char,i) => {
-        return char === str[str.length - i - 1]
-    })
-
-}
+        let reversed = ""
+    
+        for (let char of str) {
+            reversed = char + reversed
+        }
+    
+        return str === reversed
+    
+    }
 
 module.exports = palindrome;
 
 
-// solution 1
-// function palindrome(str) {
-
-//     let reversed = ""
-
-//     for (let char of str) {
-//         reversed = char + reversed
-//     }
-
-//     return str === reversed
-
-// }
+// return str.split("").every((char,i) => {
+//     return char === str[str.length - i - 1]
+// })
