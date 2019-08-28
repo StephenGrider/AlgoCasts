@@ -41,3 +41,18 @@ module.exports = reverse;
 //   }
 //   return reversed;
 // }
+
+// 3rd solution to reversing a string
+
+// const reverse = str => {
+//   return str.split('').reduce((reversed, character) => {
+//     return character + reversed;
+//   }, '');
+// }
+
+// in more of the ES6 syntax:
+// const reverse = str => {
+//   str.split('').reduce((rev, char) => char + rev, '');
+// }
+
+// reduce() is a helper function
