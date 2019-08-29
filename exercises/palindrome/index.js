@@ -29,7 +29,8 @@ module.exports = palindrome;
 // return str === reversed;
 // }
 
-
 // const palindrome = str => {
-  // let arr = 
+  // return str.split("").every((char, i) => {
+    // return char === str[str.length - i - 1]
+// });
 // }
