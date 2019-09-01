@@ -11,6 +11,12 @@ class Node {
 
 }
 
-class LinkedList {}
+class LinkedList {
+
+    constructor() {
+        this.head = null
+    }
+
+}
 
 module.exports = { Node, LinkedList };
