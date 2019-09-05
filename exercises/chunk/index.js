@@ -24,3 +24,10 @@ const chunk = (array, size) => {
 };
 
 module.exports = chunk;
+
+
+// this is an alternative solution using the slice() method
+
+// const chuck = (array, size) => {
+  // 
+// };
