@@ -25,9 +25,15 @@ const chunk = (array, size) => {
 
 module.exports = chunk;
 
-
 // this is an alternative solution using the slice() method
 
 // const chuck = (array, size) => {
-  // 
+// let chunked = [];
+// let index = 0;
+
+// while(index < array.length) {
+  // chunked.push(array.slice(index, index + size))
+  // index += size;
+// }
+// return chunked
 // };
