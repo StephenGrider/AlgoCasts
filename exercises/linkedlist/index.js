@@ -50,6 +50,19 @@ class LinkedList {
         }
     }
 
+    clear() {
+        this.head = null
+    }
+
+    removeFirst() {
+        let node = this.head
+        this.head = node.next
+    }
+
+    removeLast(){
+        
+    }
+
 
 }
 
