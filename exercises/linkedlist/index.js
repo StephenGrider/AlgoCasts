@@ -77,8 +77,22 @@ class LinkedList {
             node = node.next
         }
         previous.next = null
-       
     }
+
+    insertLast(newNode) {
+
+        let last = this.getLast();
+
+        if(last){
+            last.next = new Node(newNode)
+        }
+
+        else {
+            this.head = new Node(newNode)
+        }
+    }
+
+    
 }
 
 
