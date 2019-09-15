@@ -92,6 +92,27 @@ class LinkedList {
         }
     }
 
+    getAt(index) {
+
+        let counter = 0
+        let node = this.head
+
+        if(!this.head){
+            return null;
+        }
+
+        while(node) {
+            if (index === counter){
+                return node;
+            }
+            else {
+                counter++;
+                node = node.next
+            }
+        }
+
+    }
+
     
 }
 
