@@ -11,11 +11,14 @@
 function reverseInt(n) {
   const reversed = n
     .toString()
-    .split('')
+    .split("")
     .reverse()
-    .join('');
-
+    .join("");
+  console.log("reversed", reversed);
+  console.log("parsedint", parseInt(reversed));
   return parseInt(reversed) * Math.sign(n);
 }
+
+console.log(reverseInt(-91));
 
 module.exports = reverseInt;

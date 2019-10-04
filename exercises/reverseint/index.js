@@ -9,7 +9,7 @@
 //   reverseInt(-90) === -9
 
 function reverseInt(n) {
-  let sign = Math.sign(n);
+  let sign = Math.sign(n); //track if pos or neg
   let string = n.toString();
   let output = "";
   if (sign === 1) {
