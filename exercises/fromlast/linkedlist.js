@@ -1,20 +1,20 @@
 class Node {
-  constructor(data, next = null) {
+  constructor (data, next = null) {
     this.data = data;
     this.next = next;
   }
 }
 
 class LinkedList {
-  constructor() {
+  constructor () {
     this.head = null;
   }
 
-  insertFirst(data) {
+  insertFirst (data) {
     this.head = new Node(data, this.head);
   }
 
-  size() {
+  size () {
     let counter = 0;
     let node = this.head;
 
@@ -26,11 +26,11 @@ class LinkedList {
     return counter;
   }
 
-  getFirst() {
+  getFirst () {
     return this.head;
   }
 
-  getLast() {
+  getLast () {
     if (!this.head) {
       return null;
     }
@@ -44,11 +44,11 @@ class LinkedList {
     }
   }
 
-  clear() {
+  clear () {
     this.head = null;
   }
 
-  removeFirst() {
+  removeFirst () {
     if (!this.head) {
       return;
     }
@@ -56,7 +56,7 @@ class LinkedList {
     this.head = this.head.next;
   }
 
-  removeLast() {
+  removeLast () {
     if (!this.head) {
       return;
     }
@@ -75,7 +75,7 @@ class LinkedList {
     previous.next = null;
   }
 
-  insertLast(data) {
+  insertLast (data) {
     const last = this.getLast();
 
     if (last) {
@@ -87,7 +87,7 @@ class LinkedList {
     }
   }
 
-  getAt(index) {
+  getAt (index) {
     let counter = 0;
     let node = this.head;
     while (node) {
@@ -101,7 +101,7 @@ class LinkedList {
     return null;
   }
 
-  removeAt(index) {
+  removeAt (index) {
     if (!this.head) {
       return;
     }
@@ -118,7 +118,7 @@ class LinkedList {
     previous.next = previous.next.next;
   }
 
-  insertAt(data, index) {
+  insertAt (data, index) {
     if (!this.head) {
       this.head = new Node(data);
       return;
@@ -134,7 +134,7 @@ class LinkedList {
     previous.next = node;
   }
 
-  forEach(fn) {
+  forEach (fn) {
     let node = this.head;
     let counter = 0;
     while (node) {
@@ -144,7 +144,7 @@ class LinkedList {
     }
   }
 
-  *[Symbol.iterator]() {
+  *[Symbol.iterator] () {
     let node = this.head;
     while (node) {
       yield node;

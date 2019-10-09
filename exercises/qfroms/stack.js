@@ -1,17 +1,17 @@
 class Stack {
-  constructor() {
+  constructor () {
     this.data = [];
   }
 
-  push(record) {
+  push (record) {
     this.data.push(record);
   }
 
-  pop() {
+  pop () {
     return this.data.pop();
   }
 
-  peek() {
+  peek () {
     return this.data[this.data.length - 1];
   }
 }

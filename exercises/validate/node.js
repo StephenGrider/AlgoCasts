@@ -1,11 +1,11 @@
 class Node {
-  constructor(data) {
+  constructor (data) {
     this.data = data;
     this.left = null;
     this.right = null;
   }
 
-  insert(data) {
+  insert (data) {
     if (data < this.data && this.left) {
       this.left.insert(data);
     } else if (data < this.data) {

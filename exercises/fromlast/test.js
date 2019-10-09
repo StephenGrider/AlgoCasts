@@ -1,7 +1,7 @@
 const fromLast = require('./index');
 const L = require('./linkedlist');
 const List = L.LinkedList;
-const Node = L.Node;
+const { Node } = L;
 
 test('fromLast is a function', () => {
   expect(typeof fromLast).toEqual('function');

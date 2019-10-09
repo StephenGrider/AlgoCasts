@@ -5,15 +5,15 @@
 // removing it.
 
 class Queue {
-  constructor() {
+  constructor () {
     this.data = [];
   }
 
-  add(record) {
+  add (record) {
     this.data.unshift(record);
   }
 
-  remove() {
+  remove () {
     return this.data.pop();
   }
 }

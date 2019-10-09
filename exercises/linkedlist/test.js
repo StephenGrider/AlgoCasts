@@ -1,6 +1,6 @@
 const L = require('./index');
 const List = L.LinkedList;
-const Node = L.Node;
+const { Node } = L;
 
 test('List is a class', () => {
   expect(typeof List.prototype.constructor).toEqual('function');
@@ -301,7 +301,7 @@ describe.skip('for...of loops', () => {
     l.insertLast(3);
     l.insertLast(4);
 
-    for (let node of l) {
+    for (const node of l) {
       node.data += 10;
     }
 
@@ -314,7 +314,7 @@ describe.skip('for...of loops', () => {
   test('for...of works on an empty list', () => {
     const l = new List();
     expect(() => {
-      for (let node of l) {
+      for (const node of l) {
       }
     }).not.toThrow();
   });

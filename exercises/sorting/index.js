@@ -1,19 +1,19 @@
 // --- Directions
 // Implement bubbleSort, selectionSort, and mergeSort
 
-function bubbleSort(arr) {
+function bubbleSort (arr) {
 
 }
 
-function selectionSort(arr) {
+function selectionSort (arr) {
 
 }
 
-function mergeSort(arr) {
+function mergeSort (arr) {
 
 }
 
-function merge(left, right) {
+function merge (left, right) {
 
 }
 

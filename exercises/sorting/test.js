@@ -1,14 +1,14 @@
 const S = require('./index');
-const bubbleSort = S.bubbleSort;
-const selectionSort = S.selectionSort;
-const mergeSort = S.mergeSort;
-const merge = S.merge;
+const { bubbleSort } = S;
+const { selectionSort } = S;
+const { mergeSort } = S;
+const { merge } = S;
 
-function getArray() {
+function getArray () {
   return [100, -40, 500, -124, 0, 21, 7];
 }
 
-function getSortedArray() {
+function getSortedArray () {
   return [-124, -40, 0, 7, 21, 100, 500];
 }
 
@@ -29,9 +29,9 @@ describe('Merge sort', () => {
     const left = [1, 10];
     const right = [2, 8, 12];
 
-    expect(merge(left, right)).toEqual([1,2,8,10,12]);
+    expect(merge(left, right)).toEqual([1, 2, 8, 10, 12]);
   });
-  
+
   test('sorts an array', () => {
     expect(mergeSort(getArray())).toEqual(getSortedArray());
   });
