@@ -12,6 +12,17 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+function fizzBuzz(n) {
+  // eslint-disable-next-line no-plusplus
+  for (let i = 1; i <= n; i++) {
+    i % 3 === 0
+      ? i % 5 === 0
+        ? console.log('fizzbuzz')
+        : console.log('fizz')
+      : i % 5 === 0
+        ? console.log('buzz')
+        : console.log(i);
+  }
+}
 
 module.exports = fizzBuzz;

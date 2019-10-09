@@ -11,9 +11,30 @@ function maxChar(str) {
   charsArr.forEach((element) => {
     charsObj[element] ? charsObj[element] += 1 : charsObj[element] = 1;
   });
+
+  // This is how you do it by creating an array of charsObj entries, then
+  // iterating through that array to find the high value
+
   const entries = Object.entries(charsObj);
   const sorted = entries.sort((a, b) => a[1] + b[1]);
   return sorted[0][0];
+
+  // This solution iterates through the entire charsObj object
+  // ESlint gave me this warning:
+  // for..in loops iterate over the entire prototype chain, which
+  // is virtually never what you want. Use Object.{keys,values,entries},
+  // and iterate over the resulting array.
+
+  // let highNum = 0;
+  // let mostUsedChar = '';
+  // for (let char in charsObj) {
+  //   if (charsObj[char] > highNum) {
+  //     highNum = charsObj[char];
+  //     mostUsedChar = char;
+  //   } else {
+  //     continue;
+  //   }
+  // } return mostUsedChar;
 }
 
 module.exports = maxChar;
