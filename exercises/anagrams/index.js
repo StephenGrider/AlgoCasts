@@ -36,7 +36,7 @@ function getOccurenceCountObject (lettersArray) {
 }
 
 function getLettersArray (string) {
-  return string.split('').filter(char => /[a-zA-Z]/.test(char));
+  return string.match(/[a-zA-Z]/g);
 }
 
 module.exports = anagrams;
