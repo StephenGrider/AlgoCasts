@@ -4,110 +4,52 @@
   },
   "rules": {
     "camelcase": 0,
-    "comma-dangle": [
-      2,
-      "never"
-    ],
-    "comma-spacing": [
-      2,
-      {
-        "before": false,
-        "after": true
-      }
-    ],
-    "arrow-spacing": [
-      2,
-      {
-        "before": true,
-        "after": true
-      }
-    ],
+    "comma-dangle": [2, "never"],
+    "comma-spacing": [2, {
+      "before": false,
+      "after": true
+    }],
+    "arrow-spacing": [2, {
+      "before": true,
+      "after": true
+    }],
     "array-bracket-spacing": 1,
     "consistent-return": 0,
     "curly": 0,
     "default-case": 0,
-    "eqeqeq": [
-      2,
-      "smart"
-    ],
+    "eqeqeq": [2, "smart"],
     "func-names": 0,
     "guard-for-in": 2,
-    "indent": [
-      2,
-      2,
-      {
-        "SwitchCase": 1
-      }
-    ],
-    "key-spacing": [
-      2,
-      {
-        "beforeColon": false,
-        "afterColon": true
-      }
-    ],
-    "keyword-spacing": [
-      2,
-      {
-        "before": true,
-        "after": true
-      }
-    ],
+    "indent": [2, 2, {
+      "SwitchCase": 1
+    }],
+    "key-spacing": [2, {
+      "beforeColon": false,
+      "afterColon": true
+    }],
+    "keyword-spacing": [2, {
+      "before": true,
+      "after": true
+    }],
     "max-len": 0,
-    "new-cap": [
-      2,
-      {
-        "newIsCapExceptions": [
-          "acl.memoryBackend",
-          "acl",
-          "mongoose",
-          "mongoose.Schema",
-          "mongoose.Types.ObjectId",
-          "mongodbBackend"
-        ],
-        "capIsNewExceptions": [
-          "Joi",
-          "Schema",
-          "mongoose.Schema",
-          "CreateShipmentsAsync",
-          "ValidateAddressAsync",
-          "CancelPickupAsync",
-          "CalculateRateAsync",
-          "PrintLabelAsync",
-          "FetchCitiesAsync",
-          "CreatePickupAsync",
-          "TrackShipmentsAsync",
-          "ValidateSecretKey",
-          "mongoose.Types.ObjectId",
-          "Server",
-          "MongooseHistoryPlugin",
-          "MongodbMixin",
-          "ExcelWriterMixin",
-          "ObjectId",
-          "SyncToAlgolia"
-        ]
-      }
-    ],
+    "new-cap": [2, {
+      "newIsCapExceptions": ["acl.memoryBackend", "acl", "mongoose", "mongoose.Schema", "mongoose.Types.ObjectId", "mongodbBackend","Buffer.from"],
+      "capIsNewExceptions": ["Joi", "Schema", "mongoose.Schema", "CreateShipmentsAsync", "ValidateAddressAsync", "CancelPickupAsync", "CalculateRateAsync", "PrintLabelAsync", "FetchCitiesAsync", "CreatePickupAsync", "TrackShipmentsAsync", "ValidateSecretKey", "mongoose.Types.ObjectId", "Server", "MongooseHistoryPlugin", "MongodbMixin", "ExcelWriterMixin", "ObjectId", "SyncToAlgolia"]
+    }],
     "no-bitwise": 0,
     "no-caller": 2,
     "no-console": 0,
     "no-else-return": 0,
     "no-empty-class": 0,
     "no-multi-spaces": 2,
-    "no-multiple-empty-lines": [
-      "error",
-      {
-        "max": 5,
-        "maxBOF": 0
-      }
-    ],
+    "no-multiple-empty-lines": ["error", {
+      "max": 5,
+      "maxBOF": 0
+    }],
     "no-param-reassign": 0,
     "no-shadow": 0,
     "no-spaced-func": 2,
-    "func-style": [
-      "error",
-      "declaration"
-    ],
+    "func-style": ["error", "declaration"],
     "no-throw-literal": 2,
     "no-trailing-spaces": "error",
     "no-undef": "error",
@@ -115,105 +57,57 @@
     "no-unreachable": 2,
     "no-underscore-dangle": 0,
     "no-unused-expressions": 0,
-    "no-unused-vars": [
-      "error",
-      {
-        "args": "none"
-      }
-    ],
+    "no-unused-vars": ["error", {
+      "args": "none"
+    }],
     "no-const-assign": "error",
     "object-shorthand": "error",
     "no-useless-rename": "error",
     "require-await": "error",
-    "prefer-const": [
-      "error",
-      {
-        "destructuring": "all"
+    "prefer-const": ["error", {
+      "destructuring": "all"
+      
+    }],
+    "prefer-destructuring": ["error", {
+      "VariableDeclarator": {
+        "array": true,
+        "object": true
+      },
+      "AssignmentExpression": {
+        "array": true,
+        "object": false
       }
-    ],
-    "prefer-destructuring": [
-      "error",
-      {
-        "VariableDeclarator": {
-          "array": true,
-          "object": true
-        },
-        "AssignmentExpression": {
-          "array": true,
-          "object": false
-        }
-      }
-    ],
-    "eol-last": [
-      "error",
-      "never"
-    ],
-    "no-use-before-define": [
-      1,
-      "nofunc"
-    ],
-    "no-var": [
-      "error"
-    ],
+    }],
+    "eol-last": ["error", "never"],
+    "no-use-before-define": [1, "nofunc"],
+    "no-var": ["error"],
     "no-dupe-keys": "error",
-    "object-curly-spacing": [
-      2,
-      "always"
-    ],
-    "one-var": [
-      "error",
-      "never"
-    ],
-    "one-var-declaration-per-line": [
-      2,
-      "always"
-    ],
+    "object-curly-spacing": [2, "always"],
+    "one-var": ["error", "never"],
+    "one-var-declaration-per-line": [2, "always"],
     "padded-blocks": 0,
-    "space-before-blocks": [
-      2,
-      "always"
-    ],
-    "space-before-function-paren": [
-      2,
-      "always"
-    ],
+    "space-before-blocks": [2, "always"],
+    "space-before-function-paren": [2, "always"],
     "space-infix-ops": 2,
-    "space-in-parens": [
-      2,
-      "never"
-    ],
-    "spaced-comment": [
-      2,
-      "always"
-    ],
+    "space-in-parens": [2, "never"],
+    "spaced-comment": [2, "always"],
+    "template-curly-spacing": ["error", "never"],
     "no-whitespace-before-property": "error",
     "strict": 0,
-    "quote-props": [
-      "error",
-      "as-needed"
-    ],
-    "quotes": [
-      "error",
-      "single"
-    ],
+    "quote-props": ["error", "as-needed"],
+    "quotes": ["error", "single"],
     "semi": "error",
     "no-extra-semi": "error",
     "semi-spacing": "error",
-    "wrap-iife": [
-      2,
-      "outside"
-    ],
+    "wrap-iife": [2, "outside"],
     "prefer-template": "error"
   },
   "env": {
     "node": true,
-    "es6": true,
-    "jest": true
+    "jest": true,
+    "es6": true
   },
   "globals": {
-    "CustomError": true,
-    "reportError": true,
-    "Promise": true,
     "global": true,
     "require": true,
     "module": true
