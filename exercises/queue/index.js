@@ -7,7 +7,18 @@
 //     const q = new Queue();
 //     q.add(1);
 //     q.remove(); // returns 1;
+class Queue {
+  constructor (items = []) {
+    this.items = items;
+  }
 
-class Queue {}
+  add (item) {
+    this.items.unshift(item);
+  }
+
+  remove () {
+    return this.items.pop();
+  }
+}
 
 module.exports = Queue;
