@@ -12,6 +12,16 @@
 //   4
 //   buzz
 
-function fizzBuzz (n) {}
+function fizzBuzz (n) {
+  for (let i = 1; i <= n; i++) {
+    const multipleThree = (i % 3) === 0;
+    const multipleFive = (i % 5) === 0;
+
+    if (multipleThree && multipleFive) console.log('fizzbuzz');
+    else if (multipleThree) console.log('fizz');
+    else if (multipleFive) console.log('buzz');
+    else console.log(i);
+  }
+}
 
 module.exports = fizzBuzz;
