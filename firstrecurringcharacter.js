@@ -12,6 +12,8 @@
 let input = [2, 1, 1, 2, 3, 5, 1, 2, 4];
 //let input = [2, 3, 4, 5];
 
+//O(n^2) runtime
+
 // function firstRecurringCharacter(input) {
 //   let minDistance = null
 //   let winner = undefined
@@ -32,6 +34,8 @@ let input = [2, 1, 1, 2, 3, 5, 1, 2, 4];
 //   }
 //   return winner
 // }
+
+//O(n) runtime
 
 function firstRecurringCharacter(input) {
   let obj = {};
