@@ -6,13 +6,12 @@
 // maxChar("apple 1231111") === "1"
 
 function maxChar (str) {
-  const charactersUsageCount = str.split('').reduce((charactersUsageCount, character) => {
-    if (!charactersUsageCount[character]) charactersUsageCount[character] = 1;
-    else charactersUsageCount[character]++;
-    return charactersUsageCount;
-  }, {});
+  const charactersMap = {};
+  for (const character of str) {
+    charactersMap[character] = charactersMap[character] + 1 || 1;
+  }
 
-  const [[mostUsedCharacter]] = Object.entries(charactersUsageCount)
+  const [[mostUsedCharacter]] = Object.entries(charactersMap)
     .sort(([charA, charAUsage], [charB, charBUsage]) => {
       if (charAUsage > charBUsage) return -1;
       if (charAUsage < charBUsage) return 1;
