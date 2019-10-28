@@ -9,34 +9,34 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams (stringA, stringB) {
-  const stringALetters = getLettersArray(stringA);
-  const stringBLetters = getLettersArray(stringB);
+  const stringALetters = getLetters(stringA);
+  const stringBLetters = getLetters(stringB);
 
-  const stringAOccurenceCountObject = getOccurenceCountObject(stringALetters);
-  const stringBOccurenceCountObject = getOccurenceCountObject(stringBLetters);
+  const stringAMap = getCharactesrMap(stringALetters);
+  const stringBMap = getCharactesrMap(stringBLetters);
 
-  const allLettersFromAAreUsedTheSameAsB = stringIsPartialOfAnotherString(stringAOccurenceCountObject, stringBOccurenceCountObject);
-  const allLettersFromABreUsedTheSameAsA = stringIsPartialOfAnotherString(stringBOccurenceCountObject, stringAOccurenceCountObject);
-
-  return allLettersFromAAreUsedTheSameAsB && allLettersFromABreUsedTheSameAsA;
+  return areStringsAnagrams(stringAMap, stringBMap);
 }
 
-function stringIsPartialOfAnotherString (stringAOccurenceObject, stringBOccurenceObject) {
-  return Object.entries(stringAOccurenceObject).every(([letter, count]) => stringBOccurenceObject[letter] === count);
+function areStringsAnagrams (stringAMap, stringBMap) {
+  if (Object.keys(stringAMap).length !== Object.keys(stringBMap).length) return false;
+
+  return Object.entries(stringAMap).every(([letter, count]) => stringBMap[letter] === count);
 }
 
 
-function getOccurenceCountObject (lettersArray) {
-  return lettersArray.reduce((occurenceCountObject, letter) => {
-    if (occurenceCountObject[letter]) occurenceCountObject[letter]++;
-    else occurenceCountObject[letter] = 1;
+function getCharactesrMap (string) {
+  const characters = {};
 
-    return occurenceCountObject;
-  }, {});
+  for (const character of string) {
+    characters[character] = characters[character] + 1 || 1;
+  }
+
+  return characters;
 }
 
-function getLettersArray (string) {
-  return string.match(/[a-zA-Z]/g);
+function getLetters (string) {
+  return string.match(/[a-zA-Z]/g).join('');
 }
 
 module.exports = anagrams;
