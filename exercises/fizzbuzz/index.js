@@ -14,12 +14,12 @@
 
 function fizzBuzz (n) {
   for (let i = 1; i <= n; i++) {
-    const multipleThree = (i % 3) === 0;
-    const multipleFive = (i % 5) === 0;
+    const multipleOfThree = (i % 3) === 0;
+    const multipleOfFive = (i % 5) === 0;
 
-    if (multipleThree && multipleFive) console.log('fizzbuzz');
-    else if (multipleThree) console.log('fizz');
-    else if (multipleFive) console.log('buzz');
+    if (multipleOfThree && multipleOfFive) console.log('fizzbuzz');
+    else if (multipleOfThree) console.log('fizz');
+    else if (multipleOfFive) console.log('buzz');
     else console.log(i);
   }
 }
