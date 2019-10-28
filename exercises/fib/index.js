@@ -8,6 +8,32 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+// function fib(n) {
+//   if (n === 0) {
+//     return 0;
+//   } else if (n === 1) {
+//     return 1;
+//   } else {
+//     return fib(n - 1) + fib(n - 2);
+//   }
+// }
+
+//exponential run time bc recursive O(2^n), for every addtl element
+//we are doing a dramatic increase in operations required (calling func again)
+
+//linear run time because O(n)
+
+function fib(n) {
+  let arr = [0, 1];
+  let index = 2;
+
+  while (index <= n) {
+    let element = arr[index - 1] + arr[index - 2];
+
+    arr.push(element);
+    index++;
+  }
+  return arr[n];
+}
 
 module.exports = fib;
