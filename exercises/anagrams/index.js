@@ -8,35 +8,39 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
+// function anagrams (stringA, stringB) {
+//   const stringALetters = getLetters(stringA);
+//   const stringBLetters = getLetters(stringB);
+
+//   const stringAMap = getCharactesrMap(stringALetters);
+//   const stringBMap = getCharactesrMap(stringBLetters);
+
+
+//   if (Object.keys(stringAMap).length !== Object.keys(stringBMap).length) return false;
+
+//   return Object.entries(stringAMap).every(([letter, count]) => stringBMap[letter] === count);
+// }
+
+// function getCharactesrMap (string) {
+//   const characters = {};
+
+//   for (const character of string) {
+//     characters[character] = characters[character] + 1 || 1;
+//   }
+
+//   return characters;
+// }
+
+// function getLetters (string) {
+//   return string.match(/[a-zA-Z]/g).join('');
+// }
+
 function anagrams (stringA, stringB) {
-  const stringALetters = getLetters(stringA);
-  const stringBLetters = getLetters(stringB);
-
-  const stringAMap = getCharactesrMap(stringALetters);
-  const stringBMap = getCharactesrMap(stringBLetters);
-
-  return areStringsAnagrams(stringAMap, stringBMap);
+  return cleanString(stringA) === cleanString(stringB);
 }
 
-function areStringsAnagrams (stringAMap, stringBMap) {
-  if (Object.keys(stringAMap).length !== Object.keys(stringBMap).length) return false;
-
-  return Object.entries(stringAMap).every(([letter, count]) => stringBMap[letter] === count);
-}
-
-
-function getCharactesrMap (string) {
-  const characters = {};
-
-  for (const character of string) {
-    characters[character] = characters[character] + 1 || 1;
-  }
-
-  return characters;
-}
-
-function getLetters (string) {
-  return string.match(/[a-zA-Z]/g).join('');
+function cleanString (str) {
+  return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
 }
 
 module.exports = anagrams;
