@@ -36,10 +36,10 @@
 // }
 
 function anagrams (stringA, stringB) {
-  return cleanString(stringA) === cleanString(stringB);
+  return getCleanString(stringA) === getCleanString(stringB);
 }
 
-function cleanString (str) {
+function getCleanString (str) {
   return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
 }
 
