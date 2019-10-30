@@ -17,6 +17,27 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+function steps(n) {
+  let level = 1;
+  while (level <= n) {
+    let column = 1;
+    let output = "";
+    let tally = 1;
+    while (column <= n) {
+      if (tally <= level) {
+        output += "#";
+      } else {
+        output += " ";
+      }
+      tally++;
+      column++;
+    }
+    console.log(output);
+
+    level++;
+  }
+}
+
+console.log(steps(4));
 
 module.exports = steps;
