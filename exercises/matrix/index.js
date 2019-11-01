@@ -16,47 +16,48 @@
 //     [10,  9,  8, 7]]
 
 function matrix (n) {
-  const result = Array.from({ length: n }).map(value => Array.from({ length: n }));
+  const result = Array.from({ length: n }).map(value => []);
 
-  let rowsBeginning = 0;
-  let rowsEnd = n - 1;
-  let columnsBeginning = 0;
-  let columnsEnd = n - 1;
+  let topRow = 0;
+  let bottomRow = n - 1;
+  let leftColumn = 0;
+  let rightColumn = n - 1;
 
   let currentNumber = 1;
 
-  while (rowsBeginning <= rowsEnd && columnsBeginning <= columnsEnd) {
-    // move right
-    for (let horizontalIndex = columnsBeginning; horizontalIndex <= columnsEnd; horizontalIndex++) {
-      result[rowsBeginning][horizontalIndex] = currentNumber;
+  while (topRow <= bottomRow && leftColumn <= rightColumn) {
+
+    // top row
+    for (let horizontalIndex = leftColumn; horizontalIndex <= rightColumn; horizontalIndex++) {
+      result[topRow][horizontalIndex] = currentNumber;
       currentNumber++;
     }
+    topRow++;
 
 
-    // move down
-    for (let verticalIndex = rowsBeginning + 1; verticalIndex <= rowsEnd; verticalIndex++) {
-      result[verticalIndex][rowsEnd] = currentNumber;
+    // right column
+    for (let verticalIndex = topRow; verticalIndex <= bottomRow; verticalIndex++) {
+      result[verticalIndex][bottomRow] = currentNumber;
       currentNumber++;
     }
+    rightColumn--;
 
 
-    // move left
-    for (let horizontalIndex = columnsEnd - 1; horizontalIndex >= columnsBeginning; horizontalIndex--) {
-      result[rowsEnd][horizontalIndex] = currentNumber;
+    // bottom row
+    for (let horizontalIndex = rightColumn; horizontalIndex >= leftColumn; horizontalIndex--) {
+      result[bottomRow][horizontalIndex] = currentNumber;
       currentNumber++;
     }
+    bottomRow--;
 
 
-    // move up
-    for (let verticalIndex = rowsEnd - 1; verticalIndex >= rowsBeginning + 1; verticalIndex--) {
-      result[verticalIndex][columnsBeginning] = currentNumber;
+    // left column
+    for (let verticalIndex = bottomRow; verticalIndex >= topRow; verticalIndex--) {
+      result[verticalIndex][leftColumn] = currentNumber;
       currentNumber++;
     }
+    leftColumn++;
 
-    columnsEnd--;
-    rowsEnd--;
-    columnsBeginning++;
-    rowsBeginning++;
   }
 
   return result;
