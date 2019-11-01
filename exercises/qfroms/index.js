@@ -16,30 +16,30 @@ const Stack = require('./stack');
 
 class Queue {
   constructor (items = []) {
-    this.stackOne = new Stack();
-    this.stackTwo = new Stack();
+    this.storageStack = new Stack();
+    this.temporaryStack = new Stack();
   }
 
   add (item) {
-    this.stackOne.push(item);
+    this.storageStack.push(item);
   }
 
   remove () {
-    while (this.stackOne.peek()) this.stackTwo.push(this.stackOne.pop());
+    while (this.storageStack.peek()) this.temporaryStack.push(this.storageStack.pop());
 
-    const value = this.stackTwo.pop();
+    const value = this.temporaryStack.pop();
 
-    while (this.stackTwo.peek()) this.stackOne.push(this.stackTwo.pop());
+    while (this.temporaryStack.peek()) this.storageStack.push(this.temporaryStack.pop());
 
     return value;
   }
 
   peek () {
-    while (this.stackOne.peek()) this.stackTwo.push(this.stackOne.pop());
+    while (this.storageStack.peek()) this.temporaryStack.push(this.storageStack.pop());
 
-    const value = this.stackTwo.peek();
+    const value = this.temporaryStack.peek();
 
-    while (this.stackTwo.peek()) this.stackOne.push(this.stackTwo.pop());
+    while (this.temporaryStack.peek()) this.storageStack.push(this.temporaryStack.pop());
 
     return value;
   }
