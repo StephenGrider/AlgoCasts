@@ -11,8 +11,8 @@
 //   s.pop(); // returns 1
 
 class Stack {
-  constructor () {
-    this.items = [];
+  constructor (items = []) {
+    this.items = items;
   }
 
   push (item) {
