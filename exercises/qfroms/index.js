@@ -20,9 +20,11 @@ class Queue {
     this.temporaryStack = new Stack();
   }
 
+
   add (item) {
     this.storageStack.push(item);
   }
+
 
   remove () {
     while (this.storageStack.peek()) this.temporaryStack.push(this.storageStack.pop());
@@ -33,6 +35,7 @@ class Queue {
 
     return value;
   }
+
 
   peek () {
     while (this.storageStack.peek()) this.temporaryStack.push(this.storageStack.pop());
