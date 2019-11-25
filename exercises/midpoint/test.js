@@ -1,6 +1,5 @@
 const midpoint = require('./index');
 const L = require('./linkedlist');
-const { Node } = L;
 const { LinkedList } = L;
 
 test('Midpoint is a function', () => {
