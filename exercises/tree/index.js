@@ -26,29 +26,57 @@ class Node {
   }
 }
 
+// class Tree {
+//   constructor () {
+//     this.root = null;
+//   }
+
+//   traverseDF (callback) {
+//     traverseDF(this.root, callback);
+//   }
+
+//   traverseBF (callback) {
+//     callback(this.root);
+//     traverseBF(this.root, callback);
+//   }
+// }
+
+// function traverseDF (node, callback) {
+//   callback(node);
+//   node.children.forEach(node => traverseDF(node, callback));
+// }
+
+// function traverseBF (node, callback) {
+//   node.children.forEach(callback);
+//   node.children.forEach(node => traverseBF(node, callback));
+// }
+
 class Tree {
   constructor () {
     this.root = null;
   }
 
-  traverseDF (callback) {
-    traverseDF(this.root, callback);
-  }
-
   traverseBF (callback) {
-    callback(this.root);
-    traverseBF(this.root, callback);
+    const arr = [this.root];
+
+    while (arr.length) {
+      const node = arr.shift();
+
+      arr.push(...node.children);
+      callback(node);
+    }
   }
-}
 
-function traverseDF (node, callback) {
-  callback(node);
-  node.children.forEach(node => traverseDF(node, callback));
-}
+  traverseDF (callback) {
+    const arr = [this.root];
 
-function traverseBF (node, callback) {
-  node.children.forEach(callback);
-  node.children.forEach(node => traverseBF(node, callback));
+    while (arr.length) {
+      const node = arr.shift();
+      arr.unshift(...node.children);
+
+      callback(node);
+    }
+  }
 }
 
 module.exports = { Tree, Node };
