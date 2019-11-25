@@ -175,6 +175,7 @@ describe('RemoveAt', () => {
   });
 
   test('removeAt doesnt crash on an index out of bounds', () => {
+    const l = new List();
     expect(() => {
       const l = new List();
       l.insertFirst('a');
@@ -280,9 +281,7 @@ describe('ForEach', () => {
     l.insertLast(3);
     l.insertLast(4);
 
-    l.forEach(node => {
-      node.data += 10;
-    });
+    l.forEach(node => node.data += 10);
 
     expect(l.getAt(0).data).toEqual(11);
     expect(l.getAt(1).data).toEqual(12);
@@ -314,7 +313,6 @@ describe('for...of loops', () => {
     const l = new List();
     expect(() => {
       for (const node of l) {
-        node;
       }
     }).not.toThrow();
   });

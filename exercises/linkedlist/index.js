@@ -68,9 +68,10 @@ class LinkedList {
   }
 
   insertLast (data) {
-    if (!this.getLast()) return this.head = new Node(data);
+    const last = this.getLast();
+    if (!last) return this.head = new Node(data);
 
-    this.getLast().next = new Node(data);
+    last.next = new Node(data);
   }
 
   getAt (index) {
@@ -106,9 +107,8 @@ class LinkedList {
 
     if (index === 0) return this.head = createdNode;
 
-    if (index > this.size()) {
-      return this.getLast().next = new Node(data);
-    }
+    if (index > this.size()) return this.getLast().next = createdNode;
+
 
     previousNode.next = createdNode;
   }
@@ -119,19 +119,13 @@ class LinkedList {
     }
   }
 
-  [Symbol.iterator] () {
-    const size = this.size();
-    let counter = 0;
+  *[Symbol.iterator] () {
+    let node = this.head;
 
-    return {
-      next: () => {
-        const iterationResult = { value: this.getAt(counter), done: counter === size };
-
-        counter++;
-
-        return iterationResult;
-      }
-    };
+    while (node) {
+      yield node;
+      node = node.next;
+    }
   }
 }
 
