@@ -12,6 +12,20 @@
 //   c.next = b;
 //   circular(l) // true
 
-function circular(list) {}
+function circular(list) {
+  let slowPointer = list.getFirst();
+  let fastPointer = list.getFirst();
+
+  //check that there is a next node after the node that is being pointed by
+  //fastPinter and that there is a node after that next node. 
+  while (fastPointer.next && fastPointer.next.next){
+    slowPointer = slowPointer.next;
+    fastPointer = fastPointer.next.next;
+    if (slowPointer === fastPointer){
+      return true;
+    }
+  }
+  return false;
+}
 
 module.exports = circular;

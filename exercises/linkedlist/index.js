@@ -103,9 +103,34 @@ class LinkedList {
   }
   //Create an insert a new node at provided index. 
   //If index is out of bounds, add the node to the end of the list.
+  insertAt(data, index){
+    let node = new Node(data);
+    //handle case where list is empty
+    if (!this.head){
+      this.head = node;
+      return;
+    }
+    //handle case when it index is 0
+    if (index === 0){
+      let prevFirst = this.getAt(index);
+      this.head = node;
+      node.next = prevFirst;
+      return;
+    }
+    let previous = this.getAt(index-1) || this.getLast();
+    let prevNodeAtIndex = previous.next;
+    previous.next = node;
+    node.next = prevNodeAtIndex;
+  }
+  forEach(fn){
+    let current = this.head;
+    let index = 0;
+    while(current){
+      fn(current, index)
+      current = current.next;
+      index++;
 
-  insertAt(index){
-
+    }
   }
 }
 
