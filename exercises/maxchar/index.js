@@ -6,21 +6,23 @@
 // maxChar("apple 1231111") === "1"
 
 function maxChar(str) {
-    //create a  map
-    let charMap = str.split('').reduce(function(obj,val){
-        obj[val] =  obj[val] + 1 || 1;
-        return obj;
-    }, {});
+  // Create a hash to store the amount of times that each character is found in a string.
+  const charMap = str.split("").reduce((charMap, c) => {
+    //charMap[c] = charMap[c] ? charMap[c] + 1 : 1;
+    charMap[c] = charMap[c] + 1 || 1;
+    return charMap;
+  }, {});
 
-    let maxVal = -1; //helper variable
-    let maxChar = ''; //helper variable
-    Object.keys(charMap).forEach(function(key){
-        if (charMap[key] > maxVal){
-            maxVal = charMap[key];
-            maxChar = key;
-        }
-    });
-    return maxChar;
+  //find the max value in the has properties and return its key value
+  let max = 0;
+  let maxChar = "";
+  for (let char in charMap) {
+    if (charMap[char] > max) {
+      max = charMap[char];
+      maxChar = char;
+    }
+  }
+  return maxChar;
 }
 
 module.exports = maxChar;
