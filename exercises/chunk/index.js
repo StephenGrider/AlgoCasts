@@ -9,42 +9,54 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 function chunk(array, size) {
-  let chunks = []; 
-  if (array.length === 0) return chunks;
-  let pointer = 0;
-  while(pointer < array.length){
-    let subArray = array.slice(pointer, pointer+size);
-      chunks = [...chunks, subArray];
-      pointer+=size
+  //Solution 1: use the slice method and a for loop
+  /* let chunks = [];
+  for (let i = 0; i < array.length; i += size) {
+    const subarray = array.slice(i, i + size);
+    //chunks.push(subarray);
+    //Use the spread operator to add the subarrays into an array
+    chunks = [...chunks, subarray];
   }
   return chunks;
+  */
 
-//chunks.push([0,1]),
-//rest = [3,4,5]
-//rest > 0 
-//return chunks = [...[[0,1]], ...chunk([3,4,5], 2); -> [[0,1], [3,4], [5]]
+  //Solution 2: Use the while loop
+  /*let chunks = [];
 
-//chunk([3,4,5], 2)
-//chunks = []
-//chunks.push([3,4])
-//rest = [5]
-//rest > 0
-// return chunks = [...[[3,4]], ...chunks([5], 2)] -> [[3,4], [5]]
+  let currIndex = 0;
+  while (currIndex < array.length) {
+    const subarray = array.slice(currIndex, currIndex + size);
+    chunks = [...chunks, subarray];
+    currIndex += size;
+  }
+  return chunks;
+  */
 
-//chunks([5], 2)
-//chunks.push([5])
-//rest = [];
-//rest = 0
-// return [[5]]
-/*
+  //Solution 3: Transform solution 2 into a recursive method
   let chunks = [];
-  chunks.push(array.slice(0,size));
-  // Get an array of the remaining values
+  const subarray = array.slice(0, size);
+  chunks.push(subarray);
+  //get the rest of the values
   const rest = array.slice(size, array.length);
   if (rest.length > 0) {
     chunks = [...chunks, ...chunk(rest, size)];
+    //call chunks again
   }
   return chunks;
+
+  //Solution 3: Use the forEach method
+  /*let chunked = [];
+  array.forEach(value => {
+    let last = chunked[chunked.length - 1];
+    if (!last || last.length === size) {
+      chunked = [...chunked, [value]];
+      //chunked.push([value]);
+    } else {
+      //[...last, value]; 
+      last.push(value);
+    }
+  });
+  return chunked;
   */
 }
 
