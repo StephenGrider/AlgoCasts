@@ -9,37 +9,53 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
-  return cleanString(stringA) === cleanString(stringB);
-}
+  const cleanStringA = cleanString(stringA);
+  const cleanStringB = cleanString(stringB);
 
-function cleanString(string){
-  return string.replace(/[^\w]/g,"").toLowerCase().split('').sort().join('');
-}
- /* Solution 1
- function anagrams(stringA, stringB) {
-  let objA = getCharMap(stringA);
-  let objB = getCharMap(stringB);
+  const charMapA = charMap(cleanStringA);
+  const charMapB = charMap(cleanStringB);
 
-  if (Object.keys(objA).length !== Object.keys(objB).length) return false;
+  //check if the objects have the same property and values
+  //Handle edge case when there are more properties in one than the other
+  if (Object.keys(charMapA).length !== Object.keys(charMapB).length) {
+    return false;
+  }
 
-  for (prop in objA){
-    if (objA[prop] !== objB[prop]) return false;
+  for (let key in charMapA) {
+    if (charMapA[key] !== charMapB[key]) {
+      return false;
+    }
   }
   return true;
 }
 
-function getCharMap (string){
-  let array = string.replace(/[^\w]/g,"").toLowerCase().split('');
-  return array.reduce(function(obj, val){
-    if (obj[val]){
-      obj[val] ++;
-    }else{
-      obj[val] = 1;
-    }
-    return obj;
-  },{})
- 
+function cleanString(string) {
+  //Remove punctuations, spaces, and lower case all letters
+  return string.replace(/[^\w]/g, "").toLowerCase();
 }
- */
+
+function charMap(string) {
+  const map = string.split("").reduce((map, char) => {
+    //map[char] = map[char] ? (map[char] += 1) : 1;
+    map[char] = (map[char] && map[char] + 1) || 1;
+    return map;
+  }, {});
+  return map;
+
+  //Solution 2: Use the sort helper method
+  //return cleanString(stringA) === cleanString(stringB);
+}
+
+/*
+function cleanString(string) {
+  //Remove punctuations, spaces, and lower case all letters
+  return string
+    .replace(/[^\w]/g, "")
+    .toLowerCase()
+    .split("")
+    .sort()
+    .join("");
+}
+*/
 
 module.exports = anagrams;
