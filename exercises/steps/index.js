@@ -48,7 +48,7 @@ function steps(n, row = 0, stair = "") {
   }
 
   //Could use ternirary operator to refactor
-  //const add = tair.length <= row ? "#" : " ";
+  //const add = stair.length <= row ? "#" : " ";
   //steps(n, row, stair + add);
 
   if (stair.length <= row) {
