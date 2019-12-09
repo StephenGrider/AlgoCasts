@@ -10,10 +10,10 @@
 //   steps(3)
 //       '#  '
 //       '## '
-//       '###'
+//       '###'  ~ Q`
 //   steps(4)
-//       '#   '  
-//       '##  ' 
+//       '#   '
+//       '##  '
 //       '### '
 //       '####'
 
@@ -23,31 +23,40 @@
 
 //string.length = 0
 
-function steps(n, row=0, stair='') {
-  if (row === n){
+function steps(n, row = 0, stair = "") {
+  //Solution 1: iterative
+  /*for (let row = 0; row < n; row++) {
+    let stair = "";
+    for (let column = 0; column < n; column++) {
+      if (column <= row) {
+        stair += "#";
+      } else {
+        stair += " ";
+      }
+    }
+    console.log(stair);
+  }*/
+
+  //Solution 2: Use recursion
+  if (n === row) {
     return;
   }
-  
-  if (stair.length === n){
+
+  if (n === stair.length) {
     console.log(stair);
-    return steps(n, row+1);
+    return steps(n, row + 1);
   }
 
-  const add = (stair.length <= row) ? '#' : ' ';
-  steps(n, row, stair + add);
-  
-  /* Iterative Solution 
-    for (let row =0; row< n;row++){
-    let string = ''
-    for (let col =0; col< n;col++){
-      if (col <= row){
-        string+= "#"
-      }
-      else string += ' ';
-    }
-    console.log(string);
-  }  
-  */
+  //Could use ternirary operator to refactor
+  //const add = tair.length <= row ? "#" : " ";
+  //steps(n, row, stair + add);
+
+  if (stair.length <= row) {
+    stair += "#";
+  } else {
+    stair += " ";
+  }
+  steps(n, row, stair);
 }
 
 module.exports = steps;
