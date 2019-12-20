@@ -10,7 +10,7 @@ function validate (node, min = null, max = null) {
     return false;
   }
 
-  if (max !== null && node.data < min) {
+  if (min !== null && node.data < min) {
     return false;
   }
 
