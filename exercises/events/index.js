@@ -10,8 +10,8 @@ class Events {
 
   // Register an event handler
   on (eventName, callback) {
-    if (this.eventsHandlers[eventName]) return this.eventsHandlers[eventName].push(callback);
-    this.eventsHandlers[eventName] = [callback];
+    if (this.eventsHandlers[eventName]) this.eventsHandlers[eventName].push(callback);
+    else this.eventsHandlers[eventName] = [callback];
   }
 
   // Trigger all callbacks associated
