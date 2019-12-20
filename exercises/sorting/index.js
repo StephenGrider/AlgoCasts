@@ -28,24 +28,13 @@ function selectionSort (arr) {
 }
 
 function mergeSort (arr) {
-  let smallChunks = arr.map(num => [num]);
-  let bigChunks = [];
+  if (arr.length === 1) return arr;
 
+  const left = arr.slice(0, arr.length / 2);
+  const right = arr.slice(arr.length / 2, arr.length);
 
-  let sortedResult = [];
-  while (sortedResult.length !== arr.length) {
-    if (!smallChunks.length) {
-      smallChunks = bigChunks;
-      bigChunks = [];
-    }
-
-    sortedResult = merge(smallChunks.shift(), smallChunks.shift() || []);
-    bigChunks.push(sortedResult);
-  }
-
-  return sortedResult;
+  return merge(mergeSort(left), mergeSort(right));
 }
-
 
 function merge (left, right) {
   const results = [];
