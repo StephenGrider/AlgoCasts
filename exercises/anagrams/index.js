@@ -26,6 +26,7 @@ const anagrams = (stringA, stringB) => {
 };
 
 const buildCharMap = str => {
+  //this is my helper function
   const charMap = {};
 
   for (let char of str.replace(/[^\w]/g, "").toLowerCase()) {
@@ -36,7 +37,22 @@ const buildCharMap = str => {
 
 module.exports = anagrams;
 
-// with this you are going to want to use regular expression so that you can iterate through all of the characters and ignore any spaces or special characters
+// -------------------------------------//
+
+// THIS IS AN ALTERNATE SOLUTION FOR THIS PROBLEM //
+
+// const anagrams = (stringA, stringB) => {
+// return cleanString(stringA) === cleanString(stringB)
+// }
+
+// const cleanString = str => {
+// return str.replace(/[^w]/g, "").toLowerCase().split("").sort().join("");
+//}
+// module.exports = anagrams
+
+// -------------------------------------//
+
+// with this you are going to want to use regular expression so that you can iterate through all of the characters and ignore any spaces or punctuation
 // another solution o this is to create a hashmap or a character map and make sure that each one is used, no more and none less
 // some edge cases that you would have to consider and could test for would be the length of word or "" and then the number of characters that it contains, and compare the two
 
