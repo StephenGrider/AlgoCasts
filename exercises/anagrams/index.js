@@ -53,8 +53,11 @@ module.exports = anagrams;
 // -------------------------------------//
 
 // with this you are going to want to use regular expression so that you can iterate through all of the characters and ignore any spaces or punctuation
+
 // another solution o this is to create a hashmap or a character map and make sure that each one is used, no more and none less
+
 // some edge cases that you would have to consider and could test for would be the length of word or "" and then the number of characters that it contains, and compare the two
 
 // if you are iterating over and array you will use the work "of" in a for loop.
+
 // if you are iterating over and object you will use the word "in" in a for loop
