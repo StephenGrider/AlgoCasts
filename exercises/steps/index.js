@@ -17,6 +17,8 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+const steps = n => {
+  
+};
 
 module.exports = steps;
