@@ -23,7 +23,16 @@ module.exports = capitalize;
 
 // this is another solution to this problem //
 //const capitalize = str => {
-//  let result = str[]
+//  let result = str[0].toUpperCase();
+//
+//  for (let i = 1; i < str.length; i++) {
+//  if (str[i-] === " ") {
+//  result += str[i].toUpperCase();
+// } else {
+//   result += str[i];
+//}
+//}
+// return result;
 //}
 
 //with this you are going to be looking to the left of a character and if it is a space then we are going to capitalize that character on the right
