@@ -18,3 +18,13 @@ const capitalize = str => {
 };
 
 module.exports = capitalize;
+
+// ------------------------------------//
+
+// this is another solution to this problem //
+//const capitalize = str => {
+//  let result = str[]
+//}
+
+//with this you are going to be looking to the left of a character and if it is a space then we are going to capitalize that character on the right
+//to handle the fist letter of the string we are going to take str[0] and capitalize it first
