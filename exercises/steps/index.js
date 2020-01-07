@@ -22,3 +22,7 @@ const steps = n => {
 };
 
 module.exports = steps;
+
+//--------NOTES------------//
+
+//remember that in each one of the steps that you have to inculde the spaces or the test will fail. For step three you will see that in each step there are 3 characters in each step even though some of them are spaces
