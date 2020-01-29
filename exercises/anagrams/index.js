@@ -8,6 +8,45 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {}
+function anagrams(stringA, stringB) {
+    // let longerString
+    // let strA = stringA.replace(/[^\w]/g, "").toLowerCase().split("")
+    // let strB = stringB.replace(/[^\w]/g, "").toLowerCase().split("")
+    // strA.length >= strB.length ? longerString = strA : longerString = strB
+    // let strAobj = {}
+    // let strBobj = {}
+
+    // for (let i = 0; i < longerString.length; i++) {
+    //     if(strAobj[strA[i]] && strA[i] !== undefined){
+    //         strAobj[strA[i]] = strAobj[strA[i]] + 1
+    //     }else if(!strAobj[strA[i]] && strA[i] !== undefined){
+    //         strAobj[strA[i]] = 1
+    //     }else if(strA[i] === undefined){
+    //         return false
+    //     }
+
+    //     if(strBobj[strB[i]] && strB[i] !== undefined){
+    //         strBobj[strB[i]] = strBobj[strB[i]] + 1
+    //     }else if(!strBobj[strB[i]] && strB[i] !== undefined){
+    //         strBobj[strB[i]] = 1
+    //     }else if(strB[i] === undefined){
+    //         return false
+    //     }
+    // }
+
+    // for (const char in strAobj) {
+    //     if(strAobj[char] !== strBobj[char]){
+    //         return false
+    //     }
+    // }
+
+    // return true
+
+    return sortedStr(stringA) === sortedStr(stringB)
+}
+
+function sortedStr(str){
+    return str.replace(/[^\w]/g, "").toLowerCase().split("").sort().join("")
+}
 
 module.exports = anagrams;
