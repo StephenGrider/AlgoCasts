@@ -12,13 +12,17 @@
 
 // another way
 function reverse(str){
-    let endpoint = str.length - 1
+    // let endpoint = str.length - 1
     let reversed = ""
-    for(let i = endpoint; i > -1; i--)
-    {
-        reversed += str[i]
+    // for(let i = endpoint; i > -1; i--)
+    // {
+    //     reversed += str[i]
+    // }
+    for(let character of str){
+        reversed = character + reversed
     }
     return reversed
 }
+
 
 module.exports = reverse;
