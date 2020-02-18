@@ -1,8 +1,8 @@
 # Reverse a String 
 ## Array methods used: 
--.split()  
--.reverse()  
--.join()
+.split()  
+.reverse()  
+.join()
 
 ## Uses for each method
 
