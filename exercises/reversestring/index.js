@@ -24,9 +24,8 @@
 //     return reversed
 // }
 
-//another way
+//more advanced way
 function reverse(str){
-   //go through the array
    return str.split("").reduce((reversed, character)=> {
         return character + reversed
    })
