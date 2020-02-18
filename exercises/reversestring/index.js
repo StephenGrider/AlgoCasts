@@ -11,17 +11,25 @@
 // }
 
 // another way
+// function reverse(str){
+//     // let endpoint = str.length - 1
+//     let reversed = ""
+//     // for(let i = endpoint; i > -1; i--)
+//     // {
+//     //     reversed += str[i]
+//     // }
+//     for(let character of str){
+//         reversed = character + reversed
+//     }
+//     return reversed
+// }
+
+//another way
 function reverse(str){
-    // let endpoint = str.length - 1
-    let reversed = ""
-    // for(let i = endpoint; i > -1; i--)
-    // {
-    //     reversed += str[i]
-    // }
-    for(let character of str){
-        reversed = character + reversed
-    }
-    return reversed
+   //go through the array
+   return str.split("").reduce((reversed, character)=> {
+        return character + reversed
+   })
 }
 
 
