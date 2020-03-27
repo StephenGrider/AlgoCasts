@@ -33,6 +33,7 @@ function reverse(str) {
     // return reversed
 
     // --- Solution with for reduce(): 
+    
     return str.split('').reduce((reversed, character) => reversed = character + reversed, '')
 }
 
