@@ -10,7 +10,7 @@
 
 function reverseInt(n) {
   let str = n.toString().split("").reverse().join("");
-
+  // Math sign will multiply the parsed reversed string
   return parseInt(str) * Math.sign(n);
 }
 
