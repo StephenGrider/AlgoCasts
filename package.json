@@ -1,0 +1,23 @@
+{
+  "name": "algocasts",
+  "version": "1.0.0",
+  "description": "Companion repo to a course on Udemy.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pipopotamasu/AlgoCasts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pipopotamasu/AlgoCasts/issues"
+  },
+  "homepage": "https://github.com/pipopotamasu/AlgoCasts#readme",
+  "devDependencies": {
+    "jest": "^25.5.0"
+  }
+}
