@@ -147,6 +147,14 @@ class LinkedList {
 
     return this;
   }
+
+  *[Symbol.iterator]() {
+    let node = this.head;
+    while (node) {
+      yield node;
+      node = node.next;
+    }
+  }
 }
 
 const list = new LinkedList();
