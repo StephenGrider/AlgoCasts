@@ -8,6 +8,71 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {}
+function removeNotAlpha (str) {
+  return str.replace(/[^\w]/g, '')
+}
+
+function buildMap (str) {
+  const map = new Map();
+  str.split('').forEach((char) => {
+    if (!map.has(char)) {
+      map.set(char, 1)
+    } else {
+      map.set(char, map.get(char) + 1)
+    }
+  });
+
+  return map
+}
+
+function anagrams(stringA, stringB) {
+  const strA = removeNotAlpha(stringA).toLowerCase()
+  const strB = removeNotAlpha(stringB).toLowerCase()
+
+  if (strA.length !== strB.length) return false;
+
+  return strA.split('').sort().join('') === strB.split('').sort().join('')
+}
+
+// function anagrams(stringA, stringB) {
+//   const strA = removeNotAlpha(stringA).toLowerCase()
+//   const strB = removeNotAlpha(stringB).toLowerCase()
+
+//   if (strA.length !== strB.length) return false;
+
+//   // create map
+//   const mapA = buildMap(strA)
+//   const mapB = buildMap(strB)
+
+//   // compare
+//   for (let char of mapA.keys()) {
+//     if (mapA.get(char) !== mapB.get(char)) {
+//       return false;
+//     }
+//   }
+
+//   return true
+// }
+
+// function anagrams(stringA, stringB) {
+//   const strA = removeNotAlpha(stringA).toLowerCase()
+//   const strB = removeNotAlpha(stringB).toLowerCase()
+
+//   if (strA.length !== strB.length) return false;
+
+//   // create map
+//   const mapA = buildMap(strA)
+
+//   // compare
+//   for (let char of strB) {
+//     if (mapA.has(char) && mapA.get(char) !== 0) {
+//       mapA.set(char, mapA.get(char) - 1)
+//     } else {
+//       return false;
+//     }
+//   }
+
+//   return [...mapA.values()].every((v) => v === 0)
+// }
 
 module.exports = anagrams;
