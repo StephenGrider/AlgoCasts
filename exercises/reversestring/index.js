@@ -6,6 +6,15 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
-function reverse(str) {}
+function reverse_string(str) {
+  // split string into sub-string in a Array
+  var split_string = str.split("")
+  // Reverse array of substrings
+  var reverseArray = split_string.reverse()
+  // Combine reverseArray sub-strings to create reverse word
+  var joinArray = reverseArray.join("")
+  // return reversed string
+  return joinArray
+}
 
-module.exports = reverse;
+module.exports = reverse_string;
