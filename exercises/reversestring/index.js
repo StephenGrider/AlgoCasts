@@ -12,18 +12,20 @@ function reverse(str) {
 
   for (let character of str){
     reversed = character + reversed
+    debugger
   }
 
   return reversed
 }
 
-module.exports = reverse;
 
 //Basic Built-In Reverse Function
-//function reverse(str) {
+// function reverse(str) {
+//   debugger;
 //   return str.split('').reverse().join('')
 // }
 
+reverse('asdf');
 
 // ES5 syntax
 // function reverse(str) {
@@ -31,3 +33,7 @@ module.exports = reverse;
 //     char + rev
 //   , '')
 // }
+
+
+
+module.exports = reverse;
