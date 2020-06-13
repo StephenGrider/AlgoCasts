@@ -6,20 +6,28 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
-function reverse_string(str) {
-  // split string into sub-string in a Array
-  // var split_string = str.split("")
+// Loop through string characters and returns reverse_string
+function reverse(str) {
+  let reversed = "";
 
-  // Reverse array of substrings
-  // var reverseArray = split_string.reverse()
+  for (let character of str){
+    reversed = character + reversed
+  }
 
-  // Combine reverseArray sub-strings to create reverse word
-  // var joinArray = reverseArray.join("")
-  
-  // return reversed string
-  // var string = str.split('')
-  // return string.reverse().join('')
-
+  return reversed
 }
 
-module.exports = reverse_string;
+module.exports = reverse;
+
+//Basic Built-In Reverse Function
+//function reverse(str) {
+//   return str.split('').reverse().join('')
+// }
+
+
+// ES5 syntax
+// function reverse(str) {
+//   return str.split('').reduce((rev, char) =>
+//     char + rev
+//   , '')
+// }
