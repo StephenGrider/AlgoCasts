@@ -8,6 +8,17 @@
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
 function capitalize(str) {
+  return capitalizeProvidedSolution(str);
+}
+
+/**
+ * This is the solution I wrote, and the 1st provided solution is similar
+ * to this, but it was written as multi-line solution.
+ *
+ * @param {*} str
+ * @returns
+ */
+function capitalizeMySolution(str) {
   return str
     .split(" ")
     .map(
@@ -15,6 +26,25 @@ function capitalize(str) {
         word[0].toUpperCase() + (word.length > 1 ? word.substring(1) : "")
     )
     .join(" ");
+}
+
+/**
+ * This is the 2nd provided solution.
+ *
+ * @param {*} str
+ * @returns
+ */
+function capitalizeProvidedSolution(str) {
+  let result = str[0].toUpperCase();
+
+  for (let i = 1; i < str.length; i++) {
+    if (str[i - 1] === " ") {
+      result += str[i].toUpperCase();
+    } else {
+      result += str[i];
+    }
+  }
+  return result;
 }
 
 module.exports = capitalize;
