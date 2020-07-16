@@ -12,6 +12,13 @@ function anagrams(stringA, stringB) {
   return anagramsUsingMap(stringA, stringB);
 }
 
+/**
+ * This is the solution I wrote, and it's also the 2nd provided solution.
+ *
+ * @param {*} stringA
+ * @param {*} stringB
+ * @returns
+ */
 function anagramsMySolution(stringA, stringB) {
   const charInA = stringA.replace(/[^\w]/g, "").toLowerCase();
   const charInB = stringB.replace(/[^\w]/g, "").toLowerCase();
@@ -21,6 +28,13 @@ function anagramsMySolution(stringA, stringB) {
   );
 }
 
+/**
+ * This is the provided solution.
+ *
+ * @param {*} stringA
+ * @param {*} stringB
+ * @returns
+ */
 function anagramsUsingMap(stringA, stringB) {
   const aCharMap = buildCharMap(stringA);
   const bCharMap = buildCharMap(stringB);
