@@ -30,6 +30,10 @@ class LinkedList {
     return counter;
   }
 
+  getFirst(data){
+    return this.head
+  }
+
 
 }//closing brackets for LinkedList
 
