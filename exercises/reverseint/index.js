@@ -12,6 +12,4 @@ function reverseInt(n) {
   return parseFloat(n.toString().split('').reverse().join('')) * Math.sign(n)
 }
 
-reverseInt(15)
-
 module.exports = reverseInt;
