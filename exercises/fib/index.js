@@ -9,7 +9,7 @@
 //   fib(4) === 3
 
 function fib(n) {
-  return fibUsingRecursion(n);
+  return memoize(fibUsingRecursion)(n);
 }
 
 function fibUsingIteration(n) {
@@ -32,6 +32,20 @@ function fibUsingRecursion(n) {
   }
 
   return fibUsingRecursion(n - 1) + fibUsingRecursion(n - 2);
+}
+
+function memoize(fn) {
+  const cache = {};
+  return function (...args) {
+    if (cache[args]) {
+      return cache[args];
+    }
+
+    const result = fn.apply(this, args);
+    cache[args] = result;
+
+    return result;
+  };
 }
 
 module.exports = fib;
