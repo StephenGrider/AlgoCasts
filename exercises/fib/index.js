@@ -9,6 +9,10 @@
 //   fib(4) === 3
 
 function fib(n) {
+  return fibUsingRecursion(n);
+}
+
+function fibUsingIteration(n) {
   let fib = [0, 1];
   if (n <= 1) {
     return fib[n];
@@ -20,6 +24,14 @@ function fib(n) {
   }
 
   return fib[n];
+}
+
+function fibUsingRecursion(n) {
+  if (n < 2) {
+    return n;
+  }
+
+  return fibUsingRecursion(n - 1) + fibUsingRecursion(n - 2);
 }
 
 module.exports = fib;
