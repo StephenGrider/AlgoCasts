@@ -12,6 +12,28 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+function fizzBuzz(n) {
+
+  if (n % 3 === 0){
+    return 'fizz'
+  } else if (n % 5 === 0) {
+    return 'buzz'
+  } else {
+    return n
+  }
+
+  // iterate through each number in the array
+  // for (let i of n) {
+  //   // if any number multiple by 3 return Fizz
+  //   if (i % 3 === 0) {
+  //     return 'Fizz'
+  //   }
+  //     // any number multiple by 5 return Buzz
+  //     else if (i % 5 === 0) {
+  //     return 'Buzz'
+  //   }
+  // }
+  // return n
+}
 
 module.exports = fizzBuzz;
