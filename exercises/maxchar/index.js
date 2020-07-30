@@ -6,16 +6,11 @@
 // maxChar("apple 1231111") === "1"
 
 function maxChar(str) {
-  // store strings into an object
-  // string_object = {}
-  // // iterate through string to get most common character
-  // for (let char of str) {
-  //   string_object[char] = string_object[char] + 1 || 1
-  // }
-  // // output most common used character
-
   const charMap = {}
+  let max = 0
+  let maxChar = '';
 
+  // for of iterates through an array or string
   for (let i of str) {
     if (charMap[i]){
       charMap[i] + 1
@@ -24,9 +19,14 @@ function maxChar(str) {
     }
   }
 
-  console.log(charMap)
-
-
+  // to iterate through an object we use
+  // for in syntax
+  for (let i in charMap) {
+    if (charMap[i] > max){
+      max = charMap[i]
+      maxChar = i
+    }
+  }
 
 }
 
