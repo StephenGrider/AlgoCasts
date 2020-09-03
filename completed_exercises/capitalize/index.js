@@ -32,3 +32,13 @@ module.exports = capitalize;
 //
 //   return words.join(' ');
 // }
+
+// function capitalize(str) {
+//   let result = '';
+//
+//   for (let word of str.replace(/[^\w]//g).toLowerCase().split(' ')) 
+//     result += word[0].toUpperCase() + word.slice(1);
+//   
+//   return result;
+// }
+
