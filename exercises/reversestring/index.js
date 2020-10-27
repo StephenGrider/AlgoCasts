@@ -6,6 +6,23 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
-function reverse(str) {}
+// function reverse(str) {
+//   const word = str.split('')
+//   let palindrom = ''
+//   for (let character of str) {
+//     palindrom = character + palindrom
+//   }
+//   return palindrom
+// }
+
+// function reverse(str) {
+//   return str.split('').reverse().join('')
+// }
+
+function reverse(str) {
+  return str.split('').reduce((reversed, character) => {
+    return character + reversed
+  }, '')
+}
 
 module.exports = reverse;

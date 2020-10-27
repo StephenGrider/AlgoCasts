@@ -17,6 +17,33 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+// function steps(n) {
+//   let word = ''
+//   let temp = []
+//   for (let i = 1; i <= n; i++) {
+//     for(let j = 0; j < n; j++) {
+//       if (j < i) {
+//         temp[j] = '#'
+//       } else {
+//         temp[j] = ' '
+//       }
+//     }
+//     console.log(temp.join(''))
+//   }
+// }
+
+function steps(n) {
+  for (let i = 1; i <= n; i++) {
+    let word = ''
+    for(let j = 0; j < n; j++) {
+      if (j < i) {
+        word += '#'
+      } else {
+        word += ' '
+      }
+    }
+    console.log(word)
+  }
+}
 
 module.exports = steps;

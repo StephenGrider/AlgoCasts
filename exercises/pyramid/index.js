@@ -14,6 +14,38 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+// function pyramid(n) {
+//   for (let row = 0; row < n; row++) {
+//     let word = ''
+//     const mid = Math.floor((2 * n - 1) / 2)
+//     for (let column = 0; column < (2 * n - 1); column++) {
+//       if (column >= mid - row && column <= mid + row) {
+//         word += '#'
+//       } else {
+//         word += ' '
+//       }
+//     }
+//     console.log(word)
+//   }
+// }
+
+function pyramid(n, limit = 0, word = '') {
+  const mid = Math.floor((2 * n - 1) / 2)
+  if (limit === n){
+    return
+  }
+
+  if (word.length === ( 2 * n - 1)) {
+    console.log(word)
+    return pyramid(n, limit + 1)
+  }
+
+  if (word.length >= mid - limit && word.length <= mid + limit) {
+    word+= '#'
+  } else {
+    word+= ' '
+  }
+  pyramid(n, limit, word)
+}
 
 module.exports = pyramid;
