@@ -28,4 +28,39 @@ function fizzBuzz(n) {
   }
 }
 
+
+
+// const nums3 = Array.from(new Array(101).keys()).splice(1)
+// console.log('nums3: ', nums3)
+
+// function fizzBuzz(arr) {
+//   let result = []
+//   arr.map(n => {
+//     if (n % 3 === 0) {
+//       result.push('fizz');
+//     } else if (n % 5 === 0) {
+//       result.push('buzz');
+//     } else {
+//       result.push(n);
+//     }
+//   })
+//   return result;
+// }
+
+// console.log('fizzBuzz: ', fizzBuzz(nums3))
+
+// const fizzBuzz = (n) => {
+//   for (let i = 0; i < n; i++) {
+//     if (i % 3 === 0 && i % 5 === 0) {
+//       console.log('fizzbuzz')
+//     } else if (i % 3 === 0) {
+//       console.log('fizz')
+//     } else if (i % 5 === 0) {
+//       console.log('buzz')
+//     } else {
+//       console.log(i)
+//     }
+//   }
+// }
+
 module.exports = fizzBuzz;
