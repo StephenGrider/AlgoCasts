@@ -13,6 +13,6 @@ function capitalize(str) {
 		console.log(firstLet[0]);
 	}
 }
-capitalize('a short sentence');
+capitalize('a short sentence a');
 
 module.exports = capitalize;
