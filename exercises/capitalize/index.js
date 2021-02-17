@@ -8,6 +8,7 @@
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
 function capitalize(str) {
+	let temp = str;
 	for (let i = 0; i < str.length; i++) {
 		let firstLet = str.split('');
 		console.log(firstLet[0]);
