@@ -10,7 +10,6 @@
 
 function reverseInt(n) {
   const reversed = n.toString().split('').reverse().join('')
-  // debugger;
   return parseInt(reversed) * Math.sign(n)
 }
 
