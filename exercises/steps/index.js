@@ -17,6 +17,38 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+function steps(n, row = 0, stair = '') {
+  // for(let i = 1; i <= n; i ++) {
+    // let stepChars = "#".repeat(i) + " ".repeat(n - i);
+    // console.log(stepChars);
+    // let stair = ""; 
+    // for (let j = 1; j <= n; j++ ) {
+      // if(j <= i) {
+      //   stair += "#";
+      // }else {
+      //   stair += " ";
+      // }
+      // (j <= i) ? stair += "#" : stair += " ";
+    // }
+  //   console.log(stair);
+  // }
+
+  if (row === n) {
+    return; 
+  }
+
+  if (stair.length === n) {
+    console.log(stair);
+    return steps(n, row + 1)
+  }
+
+  if (stair.length <= row) {
+    stair += "#"; 
+  }else {
+    stair += " ";
+  }
+
+  steps(n, row, stair)
+}
 
 module.exports = steps;
