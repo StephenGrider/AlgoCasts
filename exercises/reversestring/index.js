@@ -11,13 +11,10 @@ function reverse(str) {
 
   for (let character of str) {
     reversed = character + reversed;
-    debugger;
   }
 
   return reversed;
 }
-
-reverse('apple');
 
 module.exports = reverse;
 
