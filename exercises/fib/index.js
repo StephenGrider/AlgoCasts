@@ -11,10 +11,10 @@
 function fib(n) {
   let array = []; 
   let currentVal; 
-  for(let i = 0; i < n; i++) {
+  for(let i = 0; i <= n; i++) {
     
     if (i === 0) {
-      array.push(i);
+      array[i] = i;
     } else if(i === 1) {
       array.push(i)
     } else {
@@ -22,10 +22,10 @@ function fib(n) {
       array.push(currentVal); 
     }
   }
-  debugger;
-  return array[n - 1];
+  // console.log(n,array[n], array);
+  return array[n];
 }
 
-fib(10);
+// fib(4);
 
 module.exports = fib;
