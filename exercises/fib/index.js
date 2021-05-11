@@ -9,23 +9,26 @@
 //   fib(4) === 3
 
 function fib(n) {
-  let array = []; 
-  let currentVal; 
-  for(let i = 0; i <= n; i++) {
+//   let result = []; 
+//   let currentVal; 
+//   for(let i = 0; i <= n; i++) {
     
-    if (i === 0) {
-      array[i] = i;
-    } else if(i === 1) {
-      array.push(i)
-    } else {
-      currentVal = array[i-1] + array[i-2]; 
-      array.push(currentVal); 
-    }
-  }
-  // console.log(n,array[n], array);
-  return array[n];
-}
+//     if (i === 0) {
+//       result[i] = i;
+//     } else if(i === 1) {
+//       result.push(i)
+//     } else {
+//       currentVal = result[i-1] + result[i-2]; 
+//       result.push(currentVal); 
+//     }
+//   }
+//   return result[result.length -1];
 
-// fib(4);
+// recursive solution 
+  if (n < 2) { 
+    return n;
+  }
+  return fib(n - 1) + fib(n - 2);
+}
 
 module.exports = fib;
