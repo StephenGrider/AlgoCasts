@@ -157,6 +157,32 @@ class LinkedList {
     }
     return null; 
   }
+
+  removeAt(index) {
+    // empty linkedlist 
+    // index out of bound 
+    // delete the first node 
+    // delete the last node 
+    if(!this.head) { 
+      return null;
+    } else if(this.size() < index) {
+      return null;
+    } else if( index === 0) {
+      // this.removeFirst();
+      this.head = this.head.next;
+    } 
+    else if( index === this.size()){
+      this.removeLast();
+    } 
+    else {
+      // delete any given index
+      // getAt to get the node and previous node to be removed
+      let currentNode = this.getAt(index)
+      let previousNode = this.getAt(index -1)
+      // if(!previousNode || !currentNode.next) { return null}
+      previousNode.next = currentNode.next; 
+    }
+  }
 }
 
 module.exports = { Node, LinkedList };
