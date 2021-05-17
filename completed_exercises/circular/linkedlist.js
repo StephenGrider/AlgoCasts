@@ -154,6 +154,10 @@ class LinkedList {
     }
   }
 
+  // list.forEach(node => {
+  //   node.data += 10;
+  //   });
+
   forEach(fn) {
     if (!this.head) {
       return null;

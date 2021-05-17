@@ -159,30 +159,78 @@ class LinkedList {
   }
 
   removeAt(index) {
+    // solution 1
     // empty linkedlist 
     // index out of bound 
     // delete the first node 
     // delete the last node 
-    if(!this.head) { 
+    // if(!this.head) { 
+    //   return null;
+    // } else if(this.size() < index) {
+    //   return null;
+    // } else if( index === 0) {
+    //   // this.removeFirst();
+    //   this.head = this.head.next;
+    // } 
+    // else if( index === this.size()){
+    //   this.removeLast();
+    // } 
+    // else {
+    //   // delete any given index
+    //   // getAt to get the node and previous node to be removed
+    //   let currentNode = this.getAt(index)
+    //   let previousNode = this.getAt(index -1)
+    //   previousNode.next = currentNode.next; 
+    // }
+
+    // solution 2
+    if(!this.head) {
       return null;
-    } else if(this.size() < index) {
-      return null;
-    } else if( index === 0) {
-      // this.removeFirst();
+    }else if(index === 0) {
       this.head = this.head.next;
-    } 
-    else if( index === this.size()){
-      this.removeLast();
-    } 
-    else {
-      // delete any given index
-      // getAt to get the node and previous node to be removed
-      let currentNode = this.getAt(index)
-      let previousNode = this.getAt(index -1)
-      // if(!previousNode || !currentNode.next) { return null}
-      previousNode.next = currentNode.next; 
+      return null; 
+    }
+
+    let previousNode = this.getAt(index - 1); 
+    if(!previousNode || !previousNode.next) { return null;}
+    previousNode.next = previousNode.next.next;
+  }
+
+  insertAt(data, index) {
+    // insert at 0 index with or without any elements
+    // if there is nothing, it is the head 
+    if (!this.head && index === 0){
+      this.head = new Node(data);
+    }else if (index === 0 && this.head) {
+      this.head = new Node(data, this.head); 
+    }else {
+      // insert node in the middle 
+      let previousNode = this.getAt(index - 1); 
+      if(!previousNode || !previousNode.next) {
+        this.insertLast(data);
+        return null;
+      }
+      previousNode.next = new Node(data, previousNode.next);
     }
   }
+
+  forEach(fn) {
+    if(!this.head){ return null;}
+    let currentNode = this.head; 
+    while(currentNode) {
+      fn(currentNode); 
+      currentNode = currentNode.next; 
+    }
+  }
+
+  *[Symbol.iterator]() {      //he well-known Symbol.iterator symbol specifies the default iterator for an object. Used by for...of.
+    let node = this.head;
+    while (node) {
+      yield node;
+      node = node.next;
+    }
+  }
+  
 }
 
 module.exports = { Node, LinkedList };
