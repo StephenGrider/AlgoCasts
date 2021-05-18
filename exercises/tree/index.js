@@ -10,7 +10,21 @@
 // on the tree class.  Each method should accept a
 // function that gets called with each element in the tree
 
-class Node {}
+class Node {
+
+  constructor(data){
+    this.data = [];
+    this.data.push(data);
+  }
+
+  add(data){
+    this.data.push(data);
+  }
+
+  remove(){
+    this.data.pop();
+  }
+}
 
 class Tree {}
 
