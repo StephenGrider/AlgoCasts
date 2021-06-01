@@ -9,14 +9,22 @@
 //   reverseInt(-90) === -9
 
 function reverseInt(n) {
-    // check if n is negative
-        // turn n into absolute value
-        // turn absolute value n to str
-        // reverse and add '-', turn it back into int
-        // return the int
-    // if n is not negative
-        // reverse it and turn it into int
-        // return the int
+
+    // converting n into string then reversing
+    // still a string
+    const reversed = n
+        .toString()
+        .split('')
+        .reverse()
+        .join('');
+
+    // parseInt() convert reversed back into int, '5' -> 5
+    // it will always be positive tho, '5-' -> 5 
+
+    // by multiplying the sign of n to parseInt(reversed)
+    // if n is positive, it will return positive value
+    // if n is negative, it will return negative value
+    return parseInt(reversed) * Math.sign(n);
 }
 
 module.exports = reverseInt;
