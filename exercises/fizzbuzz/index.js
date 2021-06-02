@@ -12,6 +12,31 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+function fizzBuzz(n) {
+    // for loop n
+    for(let i = 1; i <= n; i++) {
+
+        // if i is divisible by 15 with no leftovers
+        if(i % 15 === 0) {
+            // return fizzbuzz
+            console.log('fizzbuzz');
+
+        // if i is divisible by 3 with no leftovers
+        }else if(i % 3 === 0) {
+            // return fizz
+            console.log('fizz');
+
+        // if i is divisible by 3 with no leftovers
+        }else if(i % 5 === 0) {
+            // return fizz
+            console.log('buzz');
+            
+        // if i is not divisible by 3, 5 nor 15
+        }else{
+            // return the number
+            console.log(i);
+        }
+    }
+}
 
 module.exports = fizzBuzz;
