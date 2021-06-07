@@ -23,7 +23,8 @@ function chunk(array, size) {
     for (let element of array) {
 
         // checking for the last element in chunked
-        // last = [chunked[0], chunked[1]]
+        // chunked = [chunked[0], chunked[1]]
+        // chunked = []
         const last = chunked[chunked.length - 1];
 
         // if last does not exist
@@ -37,6 +38,16 @@ function chunk(array, size) {
         }
     }
     return chunked;
+
+    // Create empty 'chunked' array
+
+    // Create 'index' start at 0
+
+    // while index is less than array.length
+
+        // push a slice of length 'size' from 'array' into 'chunked'
+
+        // add 'size' to 'index'
 }
 
 module.exports = chunk;
