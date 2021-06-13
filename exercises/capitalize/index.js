@@ -11,6 +11,8 @@ function capitalize(str) {
     // Make an empty array 'words'
     const words = []
 
+    // for of loop iterates everything
+
     // Split the input string by spaces to get an array
     // and iterate the array
     for (let word of str.split(' ')) {
