@@ -24,8 +24,8 @@ function steps(n) {
             // if the current column is equal to or less than the current row
                 // add a "#' to 'stair'
             // else
-                // 
-
+                // add a '#' to 'stair'
+        // console.log 'stair'
 }
 
 module.exports = steps;
