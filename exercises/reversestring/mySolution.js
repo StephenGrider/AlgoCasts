@@ -1,4 +1,12 @@
 function reverse(str) {
+    let arr = str.split("");
+    let arrReversed = arr.reverse();
+    let strReversed = arrReversed.join("");
+    return strReversed;
+
+}
+
+function reverse(str) {
     let reversed = "";
     for (let char of str) {
         reversed = char + reversed
