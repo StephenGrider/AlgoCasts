@@ -6,7 +6,7 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
-function reverse(str) {
+//function reverse(str) {
     // if (str.length === 1) {
     //     return str;
     // }
@@ -15,12 +15,15 @@ function reverse(str) {
 
     // for (let i = str.length-1; i >= 0; i--) {
     //     reversedStr += str[i];
-    //     console.log(reversedStr);
     // }
+    // or
+    //for (character of str) {
+        //reversedStr += character;
+    //}
     //return reversedStr;
-
+//}
     // using reverse for the array
-
+function reverse(str) {
     // const arr = str.split('');
     // arr.reverse();
     // return reversedStr = arr.join('');
