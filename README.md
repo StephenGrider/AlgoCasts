@@ -1,3 +1,3 @@
 # AlgoCasts
 
-Companion repo to a course on Udemy.com
+Exercises for The Coding Interview Bootcamp: Algorithms + Data Structures course on Udemy by Stephen Grider

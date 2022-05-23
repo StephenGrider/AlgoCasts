@@ -1,7 +1,7 @@
 const circular = require('./index');
 const L = require('./linkedlist');
 const List = L.LinkedList;
-const Node = L.Node;
+const { Node } = L;
 
 test('circular', () => {
   expect(typeof circular).toEqual('function');

@@ -12,6 +12,30 @@
 //   c.next = b;
 //   circular(l) // true
 
-function circular(list) {}
+// function circular (list) {
+//   const allNodes = [];
+
+//   for (const node of list) {
+//     const nodeAlreadyExists = allNodes.some(nodeInArray => node === nodeInArray);
+//     if (nodeAlreadyExists) return true;
+//     allNodes.push(node);
+//   }
+
+//   return false;
+// }
+
+function circular (list) {
+  let slow = list.head;
+  let fast = list.head;
+
+  while (fast.next && fast.next.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+
+    if (slow === fast) return true;
+  }
+
+  return false;
+}
 
 module.exports = circular;

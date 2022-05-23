@@ -14,6 +14,16 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+function pyramid (n) {
+  const fullWidth = 2 * n - 1;
+  for (let levelNumber = 1; levelNumber <= n; levelNumber++) {
+    const blocksCount = 2 * levelNumber - 1;
+    const spacesCount = fullWidth - blocksCount;
+
+    const blocks = '#'.repeat(blocksCount);
+    const spacesOnOneSide = ' '.repeat(spacesCount / 2);
+    console.log(spacesOnOneSide + blocks + spacesOnOneSide);
+  }
+}
 
 module.exports = pyramid;
