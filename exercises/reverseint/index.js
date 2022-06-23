@@ -8,6 +8,7 @@
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
 
+// My solution
 function reverseInt(n) {
     let numArr = n.toString().split('');
 
@@ -20,3 +21,14 @@ function reverseInt(n) {
 }
 
 module.exports = reverseInt;
+
+// Instructor Solution
+// function reverseInt(n) {
+//     const reversed = n
+//         .toString()
+//         .split('')
+//         .reverse()
+//         .join('');
+
+//     return parseInt(reversed) * Math.sign(n);
+// }
