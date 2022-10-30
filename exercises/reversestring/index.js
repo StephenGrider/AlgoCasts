@@ -28,8 +28,18 @@
 
 //solution 3
 // "aiueo"
-function reverse(str) {
-    return str.split('').reduce((rev, char) => char+ rev, "");
-}
+// function reverse(str) {
+//     debugger;
+//     return str.split('').reduce((rev, char) => char+ rev, "");
+// }
+// reverse("こんにちは")
+// const reverseStr = (str) => {
+//     return str.split("").reduce((prev, char) => {
+//         return char + prev
+//     },"")
+// }
 
-module.exports = reverse;
+module.exports = reverseStr;
+
+
+
