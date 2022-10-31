@@ -22,11 +22,25 @@
 // }
 
 // solution 3
+// const palindrome = (str) => {
+//     const reversed = str.split("").reduce((prev, curr) => {
+//         return curr + prev
+//     }, "")
+//     return str === reversed
+// }
+
+// "|a|b|c|d|e|f|g|"
+//   0           arr.length - 0 -1
+
+//solution 4 (with .every())
+// const palindrome = (str) => {
+//     return str.split("").every((v, i) => {
+//         return v === str[str.length - i - 1]
+//     })
+// }
+
 const palindrome = (str) => {
-    const reversed = str.split("").reduce((prev, curr) => {
-        return curr + prev
-    }, "")
-    return str === reversed
+    return str.split("").every((v, i) => v === str[str.length - i - 1])
 }
 
 module.exports = palindrome;
