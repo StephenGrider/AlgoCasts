@@ -7,6 +7,48 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+//******Answer 1******
+
+// function palindrome(str) {
+//     const reversed = str.split('').reverse().join('');
+
+//     return reversed === str
+// }
+
+
+
+
+
+//******Answer 2******
+
+// function palindrome(str) {
+//     let reversed = ''
+
+//     for (const character of str) {
+//         reversed = character + reversed
+//     }
+
+//     if (reversed === str) {
+//         return true
+//     } else {
+//         return false
+//     }
+
+// }
+
+
+
+
+//******Answer 3******
+// i = index and the first time it is called it equals 0
+// second part of the second return statement is the mirrored other side of string
+// -i makes sure we increment through every step of loop
+
+
+function palindrome(str) {
+    return str.split('').every((char, i) => {
+        return char === str[str.length - i - 1] 
+    });
+}
 
 module.exports = palindrome;
