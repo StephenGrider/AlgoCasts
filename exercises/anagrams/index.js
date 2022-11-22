@@ -13,32 +13,50 @@
 // use RegEx to remove spaces and punctuation
 // .toLowerCase to make them all the same
 
+
+//                                 Answer 1
+
+// const anagrams = (stringA, stringB) => {
+//     const aCharMap = buildCharMap(stringA);
+//     const bCharMap = buildCharMap(stringB);
+
+//     if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
+//         return false;
+//     }
+
+//     for (let char in aCharMap){
+//         if (aCharMap[char] !== bCharMap[char]){
+//             return false;
+//         } 
+//     }
+//     return true;
+// }
+
+// const buildCharMap = (str) =>{
+//     const charMap = {};
+//     // any character that is not a num, character, cap or lower character, replace with nothing
+//     for ( let char of str.replace(/[^\w]/g, '').toLowerCase()) {
+//         charMap[char] = charMap[char] + 1 || 1;
+//     }
+
+//     return charMap 
+// }
+
+
+
+//                                 Answer 2
+
+// create helper function 
+//use .sort() to check if they are anagrams
+//
+
 const anagrams = (stringA, stringB) => {
-    const aCharMap = buildCharMap(stringA);
-    const bCharMap = buildCharMap(stringB);
-
-    if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
-        return false;
-    }
-
-    for (let char in aCharMap){
-        if (aCharMap[char] !== bCharMap[char]){
-            return false;
-        } 
-    }
-    return true;
+    return cleanString(stringA) === cleanString(stringB)
 }
 
-const buildCharMap = (str) =>{
-    const charMap = {};
-    // any character that is not a num, character, cap or lower character, replace with nothing
-    for ( let char of str.replace(/[^\w]/g, '').toLowerCase()) {
-        charMap[char] = charMap[char] + 1 || 1;
-    }
-
-    return charMap 
+const cleanString = (str) => {
+    return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('')
 }
-
 
 
 module.exports = anagrams;
