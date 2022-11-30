@@ -12,6 +12,22 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+function fizzBuzz(n) {
+    // i is the current iteration
+    // i=1 because that is our starting point, stopping at final number, and incrementing
+    for (let i = 1; i <= n; i++) {
+        // is the number a multiple of 3 and 5?
+        if (i % 3 === 0 && i % 5 === 0) {
+            console.log('fizzbuzz');
+        //we use else if so that if the above code occurs then we don't run any more
+        } else if (i % 3 === 0) {
+            console.log('fizz')
+        } else if (i % 5 === 0) {
+            console.log('buzz')
+        } else {
+            console.log(i)
+        }
+    }
+}
 
 module.exports = fizzBuzz;
