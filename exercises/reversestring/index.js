@@ -15,6 +15,13 @@ function reverse(str) {
     return reversedString
 }
 
+function reverseSimple(str) {
+
+
+    return str.split('').reverse().join('')
+}
+
 console.log(reverse('Greetings!'));
+console.log(reverseSimple('Greetings!'));
 
 module.exports = reverse;
