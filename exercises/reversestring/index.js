@@ -1,23 +1,17 @@
-// --- Directions
-// Given a string, return a new string with the reversed
-// order of characters
-// --- Examples
-//   reverse('apple') === 'leppa'
-//   reverse('hello') === 'olleh'
-//   reverse('Greetings!') === '!sgniteerG'
 
 function reverse(str) {
   return str.split("").reduce((rev, char) => char + rev, "");
 }
 
-module.exports = reverse;
-
+// SOLUTION 1
 // function reverse(str) {
 //     return str.split("").reverse().join("");
 
 // split turns the string into an array, reversed reverses the items in the array, Join converts the array back into a string.
 // }
 
+
+// SOLUTION 2
 // function reverse(str) {
 //     let reversed = "";
 //     for (let character of str) {
@@ -28,3 +22,5 @@ module.exports = reverse;
 
 // question : does a for loop store the last iterated item first?
 // }
+
+module.exports = reverse;
