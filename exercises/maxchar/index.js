@@ -8,6 +8,16 @@
 // other notes
 //Trick - take the strings and essentially convert it to an object`
 
-function maxChar(str) {}
+function maxChar(str) {
+  const chars = {};
+  for (let char of str) {
+    if (!chars[char]) {
+      chars[char] = 1;
+    } else {
+      chars[char]++;
+    }
+  }
+  chars;
+}
 
 module.exports = maxChar;
