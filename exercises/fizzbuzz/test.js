@@ -31,11 +31,3 @@ test("Calling fizzbuzz with 15 returns the correct values", () => {
     "FizzBuzz",
   ]);
 });
-
-beforeEach(() => {
-  jest.spyOn(console, "log");
-});
-
-afterEach(() => {
-  console.log.mockRestore();
-});
