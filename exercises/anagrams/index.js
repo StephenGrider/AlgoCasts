@@ -27,7 +27,7 @@ function anagrams(stringA, stringB) {
     return false
   }
 
-  return Object.entries(mapA).every(([key, val]) => {
+  return Object.keys(mapA).every((key) => {
     return mapA[key] === mapB[key]
   })
 }
