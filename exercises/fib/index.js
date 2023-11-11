@@ -8,6 +8,39 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+const mem = (fn) => {
+  const cache = {}
+  return function memFn(...args) {
+    if (cache[args]) {
+      return cache[args]
+    }
+    const result = fn.apply(this, args)
+    cache[args] = result
 
-module.exports = fib;
+    return result
+  }
+}
+
+function slowfib(n) {
+  //   let n1 = 0,
+  //     n2 = 1,
+  //     next = 0,
+  //     res = 0
+
+  //   for (let i = 0; i <= n; i++) {
+  //     res = n1
+  //     next = n1 + n2
+  //     n1 = n2
+  //     n2 = next
+  //   }
+  //   return res
+
+  if (n < 2) {
+    return n
+  }
+  return fib(n - 1) + fib(n - 2)
+}
+
+const fib = mem(slowfib)
+
+module.exports = fib
