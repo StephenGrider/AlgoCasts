@@ -14,6 +14,39 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+function pyramid(n) {
+    let arr = [' ']    
+    
+    if(n === 1){
+        return '#'
+    }
 
+    for(let i = 1; i < n; i++) {
+        arr.push(' ')
+        arr.push(' ')
+    }
+    let midpoint = Math.floor(arr.length/2)
+    arr[midpoint] = '#'
+    console.log( arr.join(''))
+
+    for(let i = 1; i < n; i++) {
+        let count = 0;
+        for(let j = 0; j < arr.length; j++){
+            if(arr[j] === ' ') {
+                if(arr[j + 1] === '#' || arr[j - 1] === '#') {
+                    arr[j] = '#'
+                    count++
+                }
+                if(count === 2) {
+                    break;
+                }
+            }
+           
+        }
+        console.log(arr.join(''))
+    }
+    
+}
+
+pyramid(7)
 module.exports = pyramid;
